@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
    Route::get('dashboard','Admin\DashboardController@index');
+   Route::resource('auction','Admin\AuctionController');
 });
 
 
