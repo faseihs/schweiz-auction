@@ -17,4 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/*Route::get('/home', 'HomeController@index')->name('home');*/
+
+
+Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
+   Route::get('dashboard','Admin\DashboardController@index');
+});
+
+
+Route::group(['prefix'=>'client','middleware'=>'client'],function (){
+    Route::get('dashboard','Client\DashboardController@index');
+});
+
