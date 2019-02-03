@@ -19,7 +19,7 @@ class CreateFilesTable extends Migration
             $table->string('path')->nullable();
             $table->string('mode')->nullable();
             $table->string('owner_type');
-            $table->integer('owner_id');
+            $table->string('owner_id');
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 
 @section('content')
     @include('includes.errors')
-        <form method="POST" action="/admin/auction">
+        <form id="formId" method="POST" action="/admin/auction" enctype="multipart/form-data">
             @csrf
 
             <div class="row">
@@ -12,21 +12,27 @@
                     <div class="card-header"><h5>Auction Details</h5></div>
                     <div class="card-body">
                         <div class="row form-group">
-                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Title</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-1"><label  for="text-input" class=" form-control-label">Title</label></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="title" placeholder="Title" class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Vehicle</label></div>
                             <div class="col-md-3">
-                                {!! Form::select('type',['car'=>'Car','bike'=>'Bike'],null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
+                                {!! Form::select('vehicle',['car'=>'Car','bike'=>'Bike'],null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
                             </div>
 
 
 
                         </div>
                         <div class="row form-group">
+                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Start Date</label></div>
+                            <div class="col-md-3"><input required type="date" id="text-input" name="start_date"  class="form-control"></div>
+                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Start Time</label></div>
+                            <div class="col-md-3"><input required type="time" id="text-input" name="start_time"  class="form-control"></div>
+                        </div>
+                        <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">End Date</label></div>
-                            <div class="col-md-3"><input type="date" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="date" id="text-input" name="end_date"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">End Time</label></div>
-                            <div class="col-md-3"><input type="time" id="text-input" name="text-input" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="time" id="text-input" name="end_time"  class="form-control"></div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +42,7 @@
                     <div class="card-body">
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Mileage</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="mileage" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="mileage"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">1st Reg</label></div>
                             <div class="col-md-3">
                                 {!! Form::date('registration',null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
@@ -54,28 +60,31 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Fuel</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="fuel" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="fuel"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Disp</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="text-input" placeholder="Displacement" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="displacement"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Body</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="body" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="body"  class="form-control"></div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Interior</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="interior" placeholder="Text" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="interior"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Exterior Color</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="exterior_color" placeholder="Displacement" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="exterior_color"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Seats</label></div>
-                            <div class="col-md-3"><input type="number" id="text-input" name="body" placeholder="Seats" class="form-control"></div>
+                            <div class="col-md-3"><input required type="number" id="text-input" name="seats"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Transported By</label></div>
-                            <div class="col-md-3"><input type="text" id="text-input" name="transported_by" placeholder="" class="form-control"></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="transported_by"  class="form-control"></div>
+                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Wheeldrive</label></div>
+                            <div class="col-md-3"><input required type="text" id="text-input" name="wheeldrive"  class="form-control"></div>
+
                         </div>
                         <hr>
                         <div class="row form-group">
                             <div class="col-md-2">Special Equipment</div>
                             <div class="col-md-10">
-                                <textarea name="special_equipment" class="form-control"></textarea>
+                                <textarea  name="special_equipment" class="form-control"></textarea>
                             </div>
                         </div>
 
@@ -87,6 +96,15 @@
                             </div>
                         </div>
 
+                        <div class="row form-group">
+                            <div class="col-md-2">Financial Services</div>
+                            <div class="col-md-10">
+                                <textarea name="financial_services" class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <hr>
+
                         <hr>
                         <div class="row form-group">
                             <div class="col-md-2">Vehicle Description</div>
@@ -95,14 +113,12 @@
                             <div class="col-md-12 vehicle-description">
                                 <div class="row vehicle-description-item">
                                     <div class="col-md-2">
-                                        <input class="form-control" placeholder="Eg :Model No" name="vehicle_description_attributes[]" type="text">
+                                        <input class="form-control" required placeholder="Eg :Model No" name="vehicle_description_attributes[]" type="text">
                                     </div>
                                     <div class="col-md-4">
-                                        <input class="form-control" placeholder="12344" name="vehicle_description_values[]" type="text">
+                                        <input class="form-control" required placeholder="12344" name="vehicle_description_values[]" type="text">
                                     </div>
-                                    <div class="col-md-2">
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Remove</button>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -115,12 +131,30 @@
                             <div class="col-md-12 conditions">
                                 <div class="row conditions-item">
                                     <div class="col-md-2">
-                                        <input class="form-control" placeholder="Eg :Model No" name="conditions[]" type="text">
+                                        <input class="form-control" required placeholder="Eg :Model No" name="conditions[]" type="text">
                                     </div>
-                                    <div class="col-md-2">
-                                        <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Remove</button>
-                                    </div>
+
                                 </div>
+                            </div>
+                        </div>
+
+                        <div class="row form-group">
+                            <div class="col-md-2">Images</div>
+                            <div class="col-md-2"><button type="button" class="btn btn-success btn-sm addImages"><i class="fa fa-plus"></i> Add Image</button></div>
+                            <hr>
+                            <div class="col-md-12 images">
+                                <div class="row images-item">
+                                    <div class="col-md-4">
+                                        <input class="form-control" required  name="images[]" type="file" accept="image/*">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row form-group">
+                            <div class="col-md-2">
+                                <button class="btn btn-dark" type="submit"><i class="fa fa-check"></i> Save</button>
                             </div>
                         </div>
                     </div>
@@ -140,18 +174,36 @@
 
 
 @section('scripts')
+    <script src="{{asset('js/jquery.form.min.js')}}"></script>
+    <script src="{{asset('js/notify.min.js')}}"></script>
     <script>
         jQuery('body').addClass('open');
         jQuery(document).ready(function () {
+            var loading
+            jQuery('#formId').ajaxForm({
+                beforeSubmit:function() {
+                    loading = jQuery.notify('Loading....', {className: 'info', autoHide: false});
+                },
+                success:function () {
+                    jQuery('.notifyjs-wrapper').trigger('notify-hide');
+                    jQuery.notify('Saved', 'success');
+                },
+                error:function () {
+                    jQuery('.notifyjs-wrapper').trigger('notify-hide');
+                    jQuery.notify('Error', 'error');
+                }
+
+            });
+
 
             //Vehicle Description Attributes Binding
            jQuery('.addVehicleDescription').click(function () {
                jQuery('.vehicle-description').append(`<div class="row vehicle-description-item">
                                     <div class="col-md-2">
-                                        <input class="form-control" placeholder="Eg :Model No" name="vehicle_description_attributes[]" type="text">
+                                        <input class="form-control" required placeholder="Eg :Model No" name="vehicle_description_attributes[]" type="text">
                                     </div>
                                     <div class="col-md-4">
-                                        <input class="form-control" placeholder="12344" name="vehicle_description_values[]" type="text">
+                                        <input class="form-control" required placeholder="12344" name="vehicle_description_values[]" type="text">
                                     </div>
                                     <div class="col-md-2">
                                         <button type="button" class="btn btn-danger btn-sm removeVehicleDescription"><i class="fa fa-trash"></i> Remove</button>
@@ -174,7 +226,7 @@
             jQuery('.addConditions').click(function () {
                 jQuery('.conditions').append(`<div class="row conditions-item">
                                     <div class="col-md-2">
-                                        <input class="form-control" placeholder="Body Finish" name="conditions[]" type="text">
+                                        <input class="form-control" required placeholder="Body Finish" name="conditions[]" type="text">
                                     </div>
 
                                     <div class="col-md-2">
@@ -182,6 +234,24 @@
                                     </div>
                                 </div>`);
                 jQuery('.removeConditions').bind('click',function () {
+                    jQuery(this).parent().parent().remove();
+                });
+
+            }) ;
+
+
+            //Images Add and Remove
+
+            jQuery('.addImages').click(function () {
+                jQuery('.images').append(` <div class="row images-item">
+                                    <div class="col-md-4">
+                                        <input class="form-control" required name="images[]" type="file" accept="image/*">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-danger btn-sm removeImages"><i class="fa fa-trash"></i> Remove</button>
+                                    </div>
+                                </div>`);
+                jQuery('.removeImages').bind('click',function () {
                     jQuery(this).parent().parent().remove();
                 });
 
