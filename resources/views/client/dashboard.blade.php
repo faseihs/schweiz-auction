@@ -26,3 +26,11 @@
 @section('title')
     | Dashboard
 @endsection
+
+
+@section('scripts')
+
+    <script>
+        jQuery('#dashboard').addClass('active')
+    </script>
+@endsection

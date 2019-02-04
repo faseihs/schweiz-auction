@@ -35,4 +35,10 @@ class Auction extends Model
     public function bids(){
         return $this->hasMany('App\Model\Bid');
     }
+
+    public function getThumbnail(){
+        if($top=$this->files()->first())
+            return $top->getImage();
+        else return '#';
+    }
 }

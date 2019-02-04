@@ -28,5 +28,7 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
 
 Route::group(['prefix'=>'client','middleware'=>'client'],function (){
     Route::get('dashboard','Client\DashboardController@index');
+    Route::get('auction','Client\DashboardController@auctions');
+    Route::get('auction/{id}','Client\DashboardController@auction');
 });
 

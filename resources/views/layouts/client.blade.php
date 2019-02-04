@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
     <link rel="stylesheet" href="{{asset('assets/css/cs-skin-elastic.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-
+    @yield('stylesheets')
 </head>
 
 <body>
@@ -30,11 +30,14 @@
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li id="auctions" class="active">
-                    <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                <li id="dashboard">
+                    <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
                 <li id="auctions">
-                    <a href="/"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
+                    <a href="/client/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
+                </li>
+                <li id="bids">
+                    <a href="/client/bid"><i class="menu-icon fa fa-laptop"></i>My Bids</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
