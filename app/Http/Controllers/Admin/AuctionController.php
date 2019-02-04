@@ -6,6 +6,7 @@ use App\Model\Auction;
 use App\Model\File;
 use App\Model\Profile;
 use App\Model\Vehicle;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -21,6 +22,8 @@ class AuctionController extends Controller
     public function index()
     {
         //
+        $auctions= Auction::where('end','>=',Carbon::now()->toDateTimeString())->get();
+        return view('admin.auction.index',compact('auctions'));
     }
 
     /**

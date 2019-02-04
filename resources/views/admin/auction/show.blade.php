@@ -155,6 +155,34 @@
                     </div>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-header">All bids</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div  class="col-md-12 table-responsive table-stats order-table ov-h">
+                            <table class="table table-borderless">
+                                <thead>
+                                <tr>
+                                    <th class="serial">#</th>
+                                    <th>Bid by</th>
+                                    <th>Amount</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($auction->bids()->orderBy('amount','DESC')->get() as $key=> $bid)
+                                    <tr>
+                                        <td class="serial">{{$key+1}}</td>
+                                        <td>{{$bid->user->name}}</td>
+                                        <td>${{$bid->amount}}</td>
+                                    </tr>
+
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
