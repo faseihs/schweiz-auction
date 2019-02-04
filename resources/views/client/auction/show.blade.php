@@ -177,6 +177,7 @@
                                     <th class="serial">#</th>
                                     <th>Bid by</th>
                                     <th>Amount</th>
+                                    <th>Won</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -185,6 +186,7 @@
                                         <td class="serial">{{$key+1}}</td>
                                         <td>{{$bid->user->name}}</td>
                                         <td>${{$bid->amount}}</td>
+                                        <td>{{$bid->winner==1?'Yes':'No'}}</td>
                                     </tr>
 
                                 @endforeach

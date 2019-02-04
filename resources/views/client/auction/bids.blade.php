@@ -20,7 +20,7 @@
                                         <th>Start</th>
                                         <th>End</th>
                                         <th>Amount</th>
-                                        <th></th>
+                                        <th>Won</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -32,7 +32,7 @@
                                             <td>{{$bid->auction->start}}</td>
                                             <td>{{$bid->auction->end}}</td>
                                             <td>${{$bid->amount}}</td>
-                                            <td></td>
+                                            <td>{{$bid->winner==1?'Yes':'No'}}</td>
                                         </tr>
 
                                     @endforeach

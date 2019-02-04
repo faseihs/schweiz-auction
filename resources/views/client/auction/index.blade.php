@@ -31,10 +31,13 @@
                                             <td>{{$auction->vehicle}}</td>
                                             <td>{{$auction->start}}</td>
                                             <td>{{$auction->end}}</td>
-                                            <td><a class="btn btn-success btn-sm" href="/client/auction-bid/{{$auction->id}}">
+                                            <td>@if($auction->status==1)
+                                                <a class="btn btn-success btn-sm" href="/client/auction-bid/{{$auction->id}}">
                                                     <i class="fa fa-check"></i>
                                                     Bid
-                                                </a></td>
+                                                </a>
+                                                    @endif
+                                            </td>
                                         </tr>
 
                                         @endforeach
