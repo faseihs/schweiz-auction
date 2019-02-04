@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Client;
 
+use App\Model\Bid;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BidController extends Controller
 {
@@ -26,5 +28,19 @@ class BidController extends Controller
             }
         }
         return view('client.auction.bids',compact(['bids','type']));
+    }
+
+    public function destroy($id){
+        try{
+            DB::beginTransaction();
+            Bid::findOrFail($id)->delete();
+            DB::commit();
+            return redirect('/client/bid')->with('success','Deleted');
+
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
     }
 }

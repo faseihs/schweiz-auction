@@ -30,6 +30,7 @@
     <nav class="navbar navbar-expand-sm navbar-default">
         <div id="main-menu" class="main-menu collapse navbar-collapse">
             <ul class="nav navbar-nav">
+                @if(Auth::user()->role_id==2)
                 <li id="dashboard">
                     <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
@@ -43,6 +44,18 @@
                 <li id="bids">
                     <a href="/client/bid"><i class="menu-icon fa fa-laptop"></i>My Bids</a>
                 </li>
+                @endif
+
+
+                <!-- Admin Links -->
+                @if(Auth::user()->role_id==1)
+                    <li id="dashboard">
+                        <a href="/admin/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                    </li>
+                    <li id="auctions">
+                        <a href="/admin/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
+                    </li>
+                @endif
             </ul>
         </div><!-- /.navbar-collapse -->
     </nav>
@@ -130,15 +143,12 @@
 
                 <div class="user-area dropdown float-right">
                     <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="user-avatar rounded-circle" src="images/admin.jpg" alt="User Avatar">
+                        <img class="user-avatar rounded-circle" src="{{Auth::user()->profile->getDp()}}" alt="Avatar">
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
-
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                        <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                        <a class="nav-link" href="/common/profile-settings"><i class="fa fa- user"></i>Profile Settings</a>
+                        <a class="nav-link" href="/common/account-settings"><i class="fa fa -cog"></i>Account Settings</a>
 
                         <a onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>

@@ -35,10 +35,7 @@
                     <a href="/admin/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
                 <li id="auctions">
-                    <a href="/admin/auction"><i class="menu-icon fa fa-laptop"></i>Active Auctions</a>
-                </li>
-                <li>
-                    <a href="/inactive-auctions"><i class="menu-icon fa fa-laptop"></i>Inactive Auctions</a>
+                    <a href="/admin/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
@@ -75,11 +72,8 @@
                     </a>
 
                     <div class="user-menu dropdown-menu">
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>My Profile</a>
 
-                        <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
-
-                        <a class="nav-link" href="#"><i class="fa fa -cog"></i>Settings</a>
+                        <a class="nav-link" href="/common/account-settings"><i class="fa fa -cog"></i>Account Settings</a>
 
                         <a onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="nav-link" href="#"><i class="fa fa-power -off"></i>Logout</a>

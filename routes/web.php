@@ -32,5 +32,14 @@ Route::group(['prefix'=>'client','middleware'=>'client'],function (){
     Route::get('auction-bid/{id}','Client\DashboardController@getAuctionBid');
     Route::post('auction-bid/{id}','Client\DashboardController@postAuctionBid');
     Route::get('bid','Client\BidController@index');
+    Route::delete('bid/{id}','Client\BidController@destroy');
+});
+
+Route::group(['prefix'=>'common','middleware'=>'auth'],function (){
+    Route::get('account-settings','Common\UserController@getAccountSettings');
+    Route::post('account-settings','Common\UserController@postAccountSettings');
+    Route::get('profile-settings','Common\UserController@getProfileSettings');
+    Route::post('profile-settings','Common\UserController@postProfileSettings');
+
 });
 

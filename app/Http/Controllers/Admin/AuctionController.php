@@ -9,6 +9,7 @@ use App\Model\Vehicle;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
@@ -19,11 +20,29 @@ class AuctionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        $auctions= Auction::where('end','>=',Carbon::now()->toDateTimeString())->get();
-        return view('admin.auction.index',compact('auctions'));
+        $auctions = Auction::all();
+        $type=1;
+        if($Type=$request->has('type'))
+        {
+            $Type=$request->type;
+            if($Type=='new') {
+                if ($log = Auth::user()->login) {
+                    $auctions = Auction::where('created_at', '>=', $log)->get();
+                }
+                $type=2;
+            }
+            else {
+
+                $auctions=Auction::where('status',0)->get();
+                $type=3;
+            }
+        }
+
+
+        return view('admin.auction.index',compact(['auctions','type']));
     }
 
     /**
@@ -183,5 +202,19 @@ class AuctionController extends Controller
     public function destroy($id)
     {
         //
+        try{
+            DB::beginTransaction();
+            $auction=Auction::findOrFail($id);
+            foreach($auction->bids as $bid){
+                $bid->delete();
+            }
+            $auction->delete();
+            DB::commit();
+            return redirect('/admin/auction')->with('success','Deleted...');
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
     }
 }

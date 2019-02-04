@@ -27,6 +27,7 @@
                                         <th>End</th>
                                         <th>Amount</th>
                                         <th>Won</th>
+                                        <th></th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -39,6 +40,18 @@
                                             <td>{{$bid->auction->end}}</td>
                                             <td>${{$bid->amount}}</td>
                                             <td>{{$bid->winner==1?'Yes':'No'}}</td>
+                                            <td>
+                                                @if($bid->auction->status==1)
+                                                <a href="#" onclick="clicked({{$bid->id}})" class="btn btn-sm btn-danger btn-labeled fa fa-trash"> Delete</a>
+
+
+
+                                                <form style="display: none;" id="del{{$bid->id}}" action="/client/bid/{{$bid->id}}" method="POST">
+                                                    <input name="_method" type="hidden" value="DELETE">
+                                                    @csrf
+                                                </form>
+                                                @endif
+                                            </td>
                                         </tr>
 
                                     @endforeach
@@ -72,5 +85,12 @@
                     window.location='/client/bid?type=lost';
             }) ;
         });
+        function clicked(id){
+            if(confirm("Are You Sure ?")){
+                document.getElementById('del'+id).submit();
+            }
+            else{
+            }
+        }
     </script>
 @endsection

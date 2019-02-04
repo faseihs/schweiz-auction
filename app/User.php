@@ -38,4 +38,7 @@ class User extends Authenticatable
     public function notifications(){
         return $this->hasMany('App\Model\Notification');
     }
+    public function profile(){
+        return $this->hasOne('App\Model\Profile');
+    }
 }
