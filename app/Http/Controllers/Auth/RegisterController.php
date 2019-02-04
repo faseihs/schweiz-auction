@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -28,7 +30,15 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+    protected function redirectTo(){
+        $user=Auth::user();
+        $user->login=Carbon::now()->toDateTimeString();
+        $user->save();
+        if(Auth::user()->role->name=='Admin')
+            return '/admin/dashboard';
+        else return '/client/dashboard';
+    }
 
     /**
      * Create a new controller instance.

@@ -16,9 +16,27 @@ class DashboardController extends Controller
         return view('client.dashboard');
     }
 
-    public function auctions(){
+    public function auctions(Request $request){
         $auctions = Auction::all();
-        return view('client.auction.index',compact('auctions'));
+        $type=1;
+        if($Type=$request->has('type'))
+        {
+            $Type=$request->type;
+            if($Type=='new') {
+                if ($log = Auth::user()->login) {
+                    $auctions = Auction::where('created_at', '>=', $log)->get();
+                }
+                $type=2;
+            }
+            else {
+
+                $auctions=Auction::where('status',0)->get();
+                $type=3;
+            }
+        }
+
+
+        return view('client.auction.index',compact(['auctions','type']));
     }
 
     public function auction($id)

@@ -33,9 +33,13 @@
                 <li id="dashboard">
                     <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                 </li>
-                <li id="auctions">
+                {{--<li class="auctions" id="auctions">
+                    <a href="/client/auction?type=new"><i class="menu-icon fa fa-laptop"></i>New Auctions</a>
+                </li>--}}
+                <li class="auctions" id="auctions">
                     <a href="/client/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
                 </li>
+
                 <li id="bids">
                     <a href="/client/bid"><i class="menu-icon fa fa-laptop"></i>My Bids</a>
                 </li>

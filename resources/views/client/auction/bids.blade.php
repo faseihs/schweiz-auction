@@ -6,7 +6,13 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">My Bids</div>
+                    <div class="card-header">My Bids
+                        <select class="form-control-sm" name="type" id="type">
+                            <option {{$type==1?'selected':''}} value="1">All</option>
+                            <option  {{$type==2?'selected':''}} value="2">Won</option>
+                            <option {{$type==3?'selected':''}} value="3">Lost</option>
+                        </select>
+                    </div>
 
                     <div class="card-body">
                         <div class="row">
@@ -56,5 +62,15 @@
 
     <script>
         jQuery('#bids').addClass('active')
+        jQuery(document).ready(function () {
+            jQuery('#type').change(function () {
+                if(jQuery(this).val()==1)
+                    window.location='/client/bid';
+                else if(jQuery(this).val()==2)
+                    window.location='/client/bid?type=won';
+                else if(jQuery(this).val()==3)
+                    window.location='/client/bid?type=lost';
+            }) ;
+        });
     </script>
 @endsection
