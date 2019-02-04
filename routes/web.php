@@ -28,6 +28,9 @@ Route::group(['prefix'=>'client','middleware'=>'client'],function (){
     Route::get('dashboard','Client\DashboardController@index');
     Route::get('auction','Client\DashboardController@auctions');
 
+    Route::get('cars','Client\DashboardController@cars');
+    Route::get('bikes','Client\DashboardController@bikes');
+
     Route::get('auction/{id}','Client\DashboardController@auction');
     Route::get('auction-bid/{id}','Client\DashboardController@getAuctionBid');
     Route::post('auction-bid/{id}','Client\DashboardController@postAuctionBid');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Model\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -34,6 +35,7 @@ class RegisterController extends Controller
     protected function redirectTo(){
         $user=Auth::user();
         $user->login=Carbon::now()->toDateTimeString();
+        Profile::create(['user_id'=>$user->id]);
         $user->save();
         if(Auth::user()->role->name=='Admin')
             return '/admin/dashboard';

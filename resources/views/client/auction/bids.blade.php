@@ -1,6 +1,7 @@
-@extends('layouts.client')
+@extends('layouts.client_new')
 
 @section('content')
+    <hr>
     <div class="container">
         @include('includes.flash')
         <div class="row justify-content-center">
@@ -74,14 +75,13 @@
 @section('scripts')
 
     <script>
-        jQuery('#bids').addClass('active')
-        jQuery(document).ready(function () {
-            jQuery('#type').change(function () {
-                if(jQuery(this).val()==1)
+        $(document).ready(function () {
+            $('#type').change(function () {
+                if($(this).val()==1)
                     window.location='/client/bid';
-                else if(jQuery(this).val()==2)
+                else if($(this).val()==2)
                     window.location='/client/bid?type=won';
-                else if(jQuery(this).val()==3)
+                else if($(this).val()==3)
                     window.location='/client/bid?type=lost';
             }) ;
         });

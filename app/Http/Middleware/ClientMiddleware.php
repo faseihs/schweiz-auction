@@ -16,8 +16,11 @@ class ClientMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()->role_id==2)
-            return $next($request);
-        else return redirect('/admin/dashboard');
+        if(Auth::user()){
+            if(Auth::user()->role_id==2)
+                return $next($request);
+        }
+
+        else return redirect('/login');
     }
 }

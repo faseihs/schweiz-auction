@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Model\Profile;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,8 @@ class LoginController extends Controller
     protected function redirectTo(){
         $user=Auth::user();
         $user->login=Carbon::now()->toDateTimeString();
+        if(!$user->profile)
+            $profile = Profile::create(['user_id'=>$user->id]);
         $user->save();
         if(Auth::user()->role->name=='Admin')
             return '/admin/dashboard';

@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.admin')
 
 @section('content')
     <div class="container">
@@ -36,7 +36,7 @@
                                             <tr>
                                                 <td class="serial">{{$key+1}}</td>
                                                 <td><img  style="width: 100px; height: 50px;" src="{{$auction->getThumbnail()}}"></td>
-                                                <td><a class="btn-link" href="/client/auction/{{$auction->id}}">{{$auction->title}}</a></td>
+                                                <td><a class="btn-link" href="/admin/auction/{{$auction->id}}">{{$auction->title}}</a></td>
                                                 <td>{{$auction->vehicle}}</td>
                                                 <td>{{$auction->start}}</td>
                                                 <td>{{$auction->end}}</td>

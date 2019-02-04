@@ -25,62 +25,32 @@
 </head>
 
 <body>
-<!-- Left Panel -->
-<aside id="left-panel" class="left-panel">
-    <nav class="navbar navbar-expand-sm navbar-default">
-        <div id="main-menu" class="main-menu collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                @if(Auth::user()->role_id==2)
-                <li id="dashboard">
-                    <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                </li>
-                {{--<li class="auctions" id="auctions">
-                    <a href="/client/auction?type=new"><i class="menu-icon fa fa-laptop"></i>New Auctions</a>
-                </li>--}}
-                <li class="auctions" id="auctions">
-                    <a href="/client/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
-                </li>
-
-                <li id="bids">
-                    <a href="/client/bid"><i class="menu-icon fa fa-laptop"></i>My Bids</a>
-                </li>
-                @endif
-
-
-                <!-- Admin Links -->
-                @if(Auth::user()->role_id==1)
-                    <li id="dashboard">
-                        <a href="/admin/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li id="auctions">
-                        <a href="/admin/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
-                    </li>
-                @endif
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </nav>
-</aside>
 <!-- /#left-panel -->
 <!-- Right Panel -->
-<div id="right-panel" class="right-panel">
+<div id="right-panel" style="margin-left: 0" class="right-panel">
     <!-- Header-->
     <header id="header" class="header">
         <div class="top-left">
             <div class="navbar-header">
                 <a class="navbar-brand" href="./"><img src="images/logo.png" alt="Schweiz Auction"></a>
-                <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
+
+
+               {{-- <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>--}}
             </div>
+            <a  href="/client/cars">Cars</a>
+            <a href="/client/bikes">Bikes</a>
         </div>
         <div class="top-right">
             <div class="header-menu">
                 <div class="header-left">
-                    <button class="search-trigger"><i class="fa fa-search"></i></button>
+
+                   {{-- <button class="search-trigger"><i class="fa fa-search"></i></button>
                     <div class="form-inline">
                         <form class="search-form">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search ..." aria-label="Search">
                             <button class="search-close" type="submit"><i class="fa fa-close"></i></button>
                         </form>
-                    </div>
+                    </div>--}}
 
                     <div class="dropdown for-notification">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -179,11 +149,9 @@
         <div class="footer-inner bg-white">
             <div class="row">
                 <div class="col-sm-6">
-                    Copyright &copy; 2018 Ela Admin
+                    Copyright &copy; 2019 Sab Solutions
                 </div>
-                <div class="col-sm-6 text-right">
-                    Designed by <a href="https://colorlib.com">Colorlib</a>
-                </div>
+
             </div>
         </div>
     </footer>

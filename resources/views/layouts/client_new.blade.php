@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="{{asset('client/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('client/css/main.css')}}">
-
-    <title>Schweiz Auction</title>
+    @yield('stylesheets')
+    <title>@yield('title')</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/client/bikes">Bike</a>
                 </li>
-                @auth
+               @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/client/bid">My Bids</a>
                     </li>
@@ -45,13 +45,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/common/account-settings">Account Settings</a>
                     </li>
-                    <li class="nav-item">
-                        <a onclick="event.preventDefault();
+                   <li class="nav-item">
+                       <a onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="nav-link" href="#">Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </li>
+                       <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                           @csrf
+                       </form>
+                   </li>
 
                 @endauth
 
@@ -69,16 +69,9 @@
     <!--container end-->
 </nav>
 <!--Section-1-->
-<section class="section-1">
-    <div class="jumbotron d-flex align-items-center">
-        <div class="gradient"></div>
-        <div class="container-fluid content">
-            <h1 data-aos="fade-up" data-aos-delay="100">Welcome to Schweiz Auction</h1>
-            <p data-aos="fade-up" data-aos-delay="700"><a href="/client/dashboard" class="btn btn-success">See Auctions</a></p>
-        </div>
-        <!--container-fluid end-->
-    </div>
-</section>
+<div id="myContainer">
+    @yield('content')
+</div>
 <!--Section-2-->
 
 <section class="section-7">
@@ -91,7 +84,8 @@
         <!-- Copyright -->
         <div class="footer-copyright text-center">
             <div class="gradient"></div>
-            <p>© 2019, All Rights reserved, Sabsolutions</p>        </div>
+            <p>© 2019, All Rights reserved, Sabsolutions</p>
+        </div>
         <!-- Copyright -->
 
     </footer>
@@ -113,6 +107,13 @@
     });
 
 </script>
+
+@yield('scripts')
+<style>
+    #myContainer{
+        min-height: 80vh;
+    }
+</style>
 </body>
 
 </html>
