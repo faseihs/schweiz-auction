@@ -184,9 +184,11 @@
                 beforeSubmit:function() {
                     loading = jQuery.notify('Loading....', {className: 'info', autoHide: false});
                 },
-                success:function () {
+                success:function (responseText) {
                     jQuery('.notifyjs-wrapper').trigger('notify-hide');
                     jQuery.notify('Saved', 'success');
+                    console.log(responseText);
+                    window.location='/admin/auction/'+responseText;
                 },
                 error:function () {
                     jQuery('.notifyjs-wrapper').trigger('notify-hide');

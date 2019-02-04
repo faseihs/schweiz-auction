@@ -126,6 +126,7 @@ class AuctionController extends Controller
 
 
             DB::commit();
+            return $auction->id;
         }
         catch(\Exception $e){
             DB::rollback();
@@ -142,6 +143,9 @@ class AuctionController extends Controller
     public function show($id)
     {
         //
+
+        $auction=Auction::findOrFail($id);
+        return view('admin.auction.show',compact('auction'));
     }
 
     /**

@@ -23,4 +23,16 @@ class Auction extends Model
     {
         return Uuid::generate();
     }
+
+    public function files(){
+        return $this->morphMany('App\Model\File','owner');
+    }
+    
+    public function Vehicle(){
+        return $this->hasOne('App\Model\Vehicle','auction_id');
+    }
+    
+    public function bids(){
+        return $this->hasMany('App\Model\Bid');
+    }
 }
