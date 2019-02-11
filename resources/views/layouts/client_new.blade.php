@@ -8,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
@@ -51,27 +52,27 @@
         <div class="collapse navbar-collapse" id="navbar1">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link active" href="/"><i class="fa fa-home"></i> Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/client/cars">Cars</a>
+                    <a class="nav-link" href="/client/cars"><i class="fas fa-car"></i> Cars</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/client/bikes">Bike</a>
+                    <a class="nav-link" href="/client/bikes"><i class="fas fa-motorcycle"></i> Bike</a>
                 </li>
                @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="/client/bid">My Bids</a>
+                        <a class="nav-link" href="/client/bid"><i class="fa fa-rub"></i> My Bids</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/common/profile-settings">Profile Settings</a>
+                        <a class="nav-link" href="/common/profile-settings"><i class="fa fa-user"></i> Profile Settings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/common/account-settings">Account Settings</a>
+                        <a class="nav-link" href="/common/account-settings"><i class="fa fa-edit"></i> Account Settings</a>
                     </li>
                    <li class="nav-item">
                        <a onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();" class="nav-link" href="#">Logout</a>
+                                                     document.getElementById('logout-form').submit();" class="nav-link" href="#"><i class="fa fa-sign-out"></i> Logout</a>
                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                            @csrf
                        </form>

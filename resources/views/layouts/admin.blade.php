@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
@@ -33,23 +34,23 @@
             <ul class="nav navbar-nav">
                 @if(Auth::user()->role_id==2)
                     <li id="dashboard">
-                        <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="/client/dashboard"><i class="menu-icon fa fa-bar-chart-o"></i>Dashboard </a>
                     </li>
                     {{--<li class="auctions" id="auctions">
                         <a href="/client/auction?type=new"><i class="menu-icon fa fa-laptop"></i>New Auctions</a>
                     </li>--}}
                     <li class="auctions" id="auctions">
-                        <a href="/client/dashboard"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
+                        <a href="/client/dashboard"><i class="menu-icon fa fa-dollar"></i>Auctions</a>
                     </li>
                     <li class="auctions" id="auctions">
-                        <a href="/client/cars"><i class="menu-icon fa fa-laptop"></i>Cars</a>
+                        <a href="/client/cars"><i class="menu-icon fas fa-car"></i>Cars</a>
                     </li>
                     <li class="auctions" id="auctions">
-                        <a href="/client/bikes"><i class="menu-icon fa fa-laptop"></i>Bikes</a>
+                        <a href="/client/bikes"><i class="menu-icon fas fa-motorcycle"></i>Bikes</a>
                     </li>
 
                     <li id="bids">
-                        <a href="/client/bid"><i class="menu-icon fa fa-laptop"></i>My Bids</a>
+                        <a href="/client/bid"><i class="menu-icon fa fa-rub"></i>My Bids</a>
                     </li>
                 @endif
 
@@ -57,10 +58,10 @@
             <!-- Admin Links -->
                 @if(Auth::user()->role_id==1)
                     <li id="dashboard">
-                        <a href="/admin/dashboard"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="/admin/dashboard"><i class="menu-icon fa fa-bar-chart-o"></i>Dashboard </a>
                     </li>
                     <li id="auctions">
-                        <a href="/admin/auction"><i class="menu-icon fa fa-laptop"></i>Auctions</a>
+                        <a href="/admin/auction"><i class="menu-icon fa fa-dollar"></i>Auctions</a>
                     </li>
                 @endif
             </ul>
