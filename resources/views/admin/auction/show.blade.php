@@ -53,14 +53,14 @@
                     </div>
                     <hr>
                     <hr>
-                    <div class="row">
+                    {{--<div class="row">
                         <div class="col-md-2">
                             <a class="btn btn-success btn-sm" href="/client/auction-bid/{{$auction->id}}">
                                 <i class="fa fa-check"></i>
                                 Bid
                             </a>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>

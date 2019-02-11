@@ -3,9 +3,10 @@
 @section('content')
     <hr>
     <div class="container">
-        @include('includes.flash')
+
         <div class="row justify-content-center">
             <div class="col-md-12">
+                @include('includes.flash')
                 <div class="card">
                     <div class="card-header">My Bids
                         <select class="form-control-sm" name="type" id="type">
@@ -28,7 +29,7 @@
                                         <th>End</th>
                                         <th>Amount</th>
                                         <th>Won</th>
-                                        <th></th>
+                                        {{--<th></th>--}}
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -41,7 +42,7 @@
                                             <td>{{$bid->auction->end}}</td>
                                             <td>${{$bid->amount}}</td>
                                             <td>{{$bid->winner==1?'Yes':'No'}}</td>
-                                            <td>
+                                            {{--<td>
                                                 @if($bid->auction->status==1)
                                                 <a href="#" onclick="clicked({{$bid->id}})" class="btn btn-sm btn-danger btn-labeled fa fa-trash"> Delete</a>
 
@@ -52,7 +53,7 @@
                                                     @csrf
                                                 </form>
                                                 @endif
-                                            </td>
+                                            </td>--}}
                                         </tr>
 
                                     @endforeach

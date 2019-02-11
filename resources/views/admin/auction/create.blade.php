@@ -41,16 +41,16 @@
                     <div class="card-header"><h5>Vehicle Details</h5></div>
                     <div class="card-body">
                         <div class="row form-group">
-                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Mileage</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="mileage"  class="form-control"></div>
+                            <div class="col-md-1"><label  for="text-input" class=" form-control-label">Mileage</label></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="mileage"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">1st Reg</label></div>
                             <div class="col-md-3">
-                                {!! Form::date('registration',null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
+                                {!! Form::date('registration',null,['class'=>'form-control','required']) !!}
                             </div>
 
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Gear</label></div>
                             <div class="col-md-3">
-                                {!! Form::text('gear',null,['class'=>'form-control','required']) !!}
+                                {!! Form::text('gear',null,['class'=>'form-control','required','placeholder'=>'In text']) !!}
                             </div>
 
 
@@ -60,24 +60,24 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Fuel</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="fuel"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="fuel"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Disp</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="displacement"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In Numeric" required type="number" id="text-input" name="displacement"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Body</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="body"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="body"  class="form-control"></div>
                         </div>
 
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Interior</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="interior"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="interior"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Exterior Color</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="exterior_color"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="exterior_color"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Seats</label></div>
-                            <div class="col-md-3"><input required type="number" id="text-input" name="seats"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In Numerics" required type="number" id="text-input" name="seats"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Transported By</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="transported_by"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="transported_by"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Wheeldrive</label></div>
-                            <div class="col-md-3"><input required type="text" id="text-input" name="wheeldrive"  class="form-control"></div>
+                            <div class="col-md-3"><input placeholder="In text" required type="text" id="text-input" name="wheeldrive"  class="form-control"></div>
 
                         </div>
                         <hr>
@@ -131,7 +131,7 @@
                             <div class="col-md-12 conditions">
                                 <div class="row conditions-item">
                                     <div class="col-md-2">
-                                        <input class="form-control" required placeholder="Eg :Model No" name="conditions[]" type="text">
+                                        <input class="form-control" required placeholder="Eg : Perfect" name="conditions[]" type="text">
                                     </div>
 
                                 </div>
@@ -190,9 +190,10 @@
                     console.log(responseText);
                     window.location='/admin/auction/'+responseText;
                 },
-                error:function () {
+                error:function (responseText) {
                     jQuery('.notifyjs-wrapper').trigger('notify-hide');
                     jQuery.notify('Error', 'error');
+
                 }
 
             });

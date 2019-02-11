@@ -77,6 +77,15 @@ class DashboardController extends Controller
 
         try{
             DB::beginTransaction();
+            //Check if Lower Bid Exists
+
+            $auction=Auction::findOrFail($id);
+            foreach($auction->bids()->where('user_id',Auth::user()->id)->get() as $bid){
+                if($request->amount<=$bid->amount)
+                    return redirect('/client/bid')->with('deleted','Bid amount lower then previous bids');
+            }
+
+            //End Check
             $bid =  new Bid();
             $bid->user_id=Auth::user()->id;
             $bid->auction_id=$id;
