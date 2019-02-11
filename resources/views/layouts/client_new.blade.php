@@ -17,7 +17,7 @@
     <link rel="icon"
           href="{{asset('images/LOGO.jpg')}}">
     @yield('stylesheets')
-    <title>@yield('title')</title>
+    <title>Schweiz Auction @yield('title')</title>
 </head>
 
 <body>

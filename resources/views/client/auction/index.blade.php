@@ -32,7 +32,11 @@
                                 <h5 class="card-title">{{$auction->title}}</h5>
                                 <p class="card-text">{{ucfirst($auction->vehicle)}}</p>
                                 <div class="text-center">
-                                    <a href="/client/auction/{{$auction->id}}" class="btn btn-success">View</a>
+                                    <a href="/client/auction-bid/{{$auction->id}}" class="btn btn-dark">
+                                        <i class="fa fa-check"></i> Bid</a>
+                                    <a href="/client/auction/{{$auction->id}}" class="btn btn-info">
+                                        <i class="fa fa-info"></i> View</a>
+
                                 </div>
                             </div>
                         </div>
@@ -43,6 +47,7 @@
 
         </div>
     </section>
+
 @endsection
 
 
