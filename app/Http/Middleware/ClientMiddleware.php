@@ -21,6 +21,6 @@ class ClientMiddleware
                 return $next($request);
         }
 
-        else return redirect('/login');
+        else return redirect('/');
     }
 }

@@ -13,11 +13,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <link rel="stylesheet" href="{{asset('client/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('client/css/main.css')}}">
+    <link rel="icon"
+          href="{{asset('images/LOGO.jpg')}}">
     @yield('stylesheets')
     <title>@yield('title')</title>
 </head>
 
 <body>
+<header style="padding: 0;" class="header bg">
+    <div class="container text-white">
+        <div class="row">
+            <div class="col-sm-4 align-self-center text-left">
+                {{--<h6>Estd 1905</h6>--}}
+            </div>
+            <div class="col-sm-4 col-12 align-self-center box-1 text-center">
+                <a class="navbar-brand" href="/"><img style="max-height: 70px;max-width: 200px;" src="{{asset('images/LOGO.jpg')}}" alt="logo"></a>
+            </div>
+            <div class="col-sm-4 align-self-center text-right">
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <!--/row-->
+    </div>
+    <!--container-->
+</header>
 <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
 <nav class="navbar navbar-expand-sm sticky-top navbar-dark">
     <div class="container">

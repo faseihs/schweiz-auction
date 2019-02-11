@@ -18,7 +18,7 @@
             </div>
         </div>
         <hr>
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 @if(sizeof($auctions)<1)
                     <div class="alert alert-danger col-md-12 text-center">No Auctions</div>
@@ -27,7 +27,7 @@
 
                     <div class="col-md-3">
                         <div class="card" style="width: 18rem;">
-                            <img style="width: 275px;height: 275px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
+                            <img style="width: 275px;height: 270px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">{{$auction->title}}</h5>
                                 <p class="card-text">{{ucfirst($auction->vehicle)}}</p>

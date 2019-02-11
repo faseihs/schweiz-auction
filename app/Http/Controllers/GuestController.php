@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Auction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
@@ -21,6 +22,13 @@ class GuestController extends Controller
         foreach ($auctions as $auction){
             $auction->close();
         }
-        return view('welcome');
+
+        if($user=Auth::user()){
+            if($user->role_id==1)
+                return redirect('/admin/dashboard');
+            else return view('welcome');
+        }
+        else return view('welcome');
+
     }
 }

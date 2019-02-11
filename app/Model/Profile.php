@@ -20,6 +20,6 @@ class Profile extends Model
     public function getDp(){
         if($this->dp)
             return '/storage/'.$this->dp->path;
-        else return '';
+        else return 'https://ui-avatars.com/api/?name='.urlencode($this->user->name);
     }
 }
