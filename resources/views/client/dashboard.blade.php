@@ -4,15 +4,21 @@
     <section class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 col-2">
+                <div class="col-sm-1 col-1">
                     Auctions
 
                 </div>
-                <div class="col-sm-12 col-4">
+                <div class="col-sm-1 col-1">
                     <select class="form-control-sm" name="type" id="type">
                         <option {{$type==1?'selected':''}} value="1">All</option>
                         <option  {{$type==2?'selected':''}} value="2">New</option>
                         <option {{$type==3?'selected':''}} value="3">Closed</option>
+                    </select>
+                </div>
+                <div class="col-sm-1 col-1">
+                    <select class="form-control-sm" name="view" id="view">
+                        <option {{$grid==1?'selected':''}} value="1">Grid View</option>
+                        <option  {{$grid==2?'selected':''}} value="2">List View</option>
                     </select>
                 </div>
             </div>
@@ -23,22 +29,60 @@
                 @if(sizeof($auctions)<1)
                     <div class="alert alert-danger col-md-12 text-center">No Auctions</div>
                 @endif
-            @foreach($auctions as $auction)
+                @if($grid==1)
+                    @foreach($auctions as $auction)
 
-                    <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
-                            <img style="width: 275px;height: 270px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">{{$auction->title}}</h5>
-                                <p class="card-text">{{ucfirst($auction->vehicle)}}</p>
-                                <div class="text-center">
-                                    <a href="/client/auction/{{$auction->id}}" class="btn btn-success">View</a>
+                            <div class="col-md-3">
+                                <div class="card" style="width: 18rem;">
+                                    <img style="width: 275px;height: 200px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{$auction->title}}</h5>
+                                        <p class="card-text">{{ucfirst($auction->vehicle)}}</p>
+                                        <div class="text-center">
+                                            <a href="/client/auction-bid/{{$auction->id}}" class="btn btn-dark">
+                                                <i class="fa fa-check"></i> Bid</a>
+                                            <a href="/client/auction/{{$auction->id}}" class="btn btn-info">
+                                                <i class="fa fa-info"></i> View</a>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-            @endforeach
+                    @endforeach
+                    @endif
+                <div class="col-md-12 col-12 table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                            <tbody>
+                                @foreach($auctions as $auction)
+                                    <tr>
+                                        <td><img style="height: 50px; width: 75px;" src="{{$auction->getThumbnail()}}"></td>
+                                        <td>{{$auction->title}}</td>
+                                        <td>{{$auction->start}}</td>
+                                        <td>{{$auction->end}}</td>
+                                        <td>
+                                            <a href="/client/auction-bid/{{$auction->id}}" class="btn btn-dark">
+                                                <i class="fa fa-check"></i> Bid</a>
+                                            <a href="/client/auction/{{$auction->id}}" class="btn btn-info">
+                                                <i class="fa fa-info"></i> View</a>
+                                        </td>
+                                    </tr>
+
+                                @endforeach
+
+                            </tbody>
+
+                    </table>
+                </div>
             </div>
 
         </div>
@@ -56,12 +100,52 @@
         $('#auctions').addClass('active')
         $(document).ready(function () {
             $('#type').change(function () {
-                if($(this).val()==1)
-                    window.location='/client/dashboard';
-                else if($(this).val()==2)
-                    window.location='/client/dashboard?type=new';
-                else if($(this).val()==3)
-                    window.location='/client/dashboard?type=closed';
+                if($('#view').val()==1) {
+                    if ($('#type').val() == 1) {
+                        window.location = '/client/dashboard?view=1';
+                    }
+                    else if ($('#type').val() == 2) {
+                        window.location = '/client/dashboard?type=new&grid=1';
+                    }
+                    else if ($('#type').val() == 3) {
+                        window.location = '/client/dashboard?type=new&grid=1';
+                    }
+                }
+                else {
+                    if ($('#type').val() == 1) {
+                        window.location = '/client/dashboard?grid=2';
+                    }
+                    else if ($('#type').val() == 2) {
+                        window.location = '/client/dashboard?type=new&grid=2';
+                    }
+                    else if ($('#type').val() == 3) {
+                        window.location = '/client/dashboard?type=new&grid=2';
+                    }
+                }
+            }) ;
+            $('#view').change(function () {
+                if($(this).val()==1) {
+                    if ($('#type').val() == 1) {
+                        window.location = '/client/dashboard?view=1';
+                    }
+                    else if ($('#type').val() == 2) {
+                        window.location = '/client/dashboard?type=new&grid=1';
+                    }
+                    else if ($('#type').val() == 3) {
+                        window.location = '/client/dashboard?type=new&grid=1';
+                    }
+                }
+                else {
+                    if ($('#type').val() == 1) {
+                        window.location = '/client/dashboard?grid=2';
+                    }
+                    else if ($('#type').val() == 2) {
+                        window.location = '/client/dashboard?type=new&grid=2';
+                    }
+                    else if ($('#type').val() == 3) {
+                        window.location = '/client/dashboard?type=new&grid=2';
+                    }
+                }
             }) ;
         });
     </script>

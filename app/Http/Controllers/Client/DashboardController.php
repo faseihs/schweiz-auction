@@ -32,7 +32,10 @@ class DashboardController extends Controller
         }
 
         $vehicle='Auctions';
-        return view('client.dashboard',compact(['auctions','type','vehicle']));
+        if($request->has('grid'))
+            $grid=$request->grid;
+        else $grid=1;
+        return view('client.dashboard',compact(['auctions','type','vehicle','grid']));
     }
 
 
@@ -55,8 +58,12 @@ class DashboardController extends Controller
             }
         }
 
+        if($request->has('grid'))
+            $grid=$request->grid;
+        else $grid=1;
 
-        return view('client.auction.index',compact(['auctions','type']));
+
+        return view('client.auction.index',compact(['auctions','type','grid']));
     }
 
     public function auction($id)
@@ -126,7 +133,10 @@ class DashboardController extends Controller
         }
 
         $vehicle='Cars';
-        return view('client.auction.index',compact(['auctions','type','vehicle']));
+        if($request->has('grid'))
+            $grid=$request->grid;
+        else $grid=1;
+        return view('client.auction.index',compact(['auctions','type','vehicle','grid']));
     }
     public function bikes(Request $request){
         $auctions = Auction::where('vehicle','bike')->get();
@@ -148,7 +158,10 @@ class DashboardController extends Controller
         }
 
         $vehicle='Bikes';
-        return view('client.auction.index',compact(['auctions','type','vehicle']));
+        if($request->has('grid'))
+            $grid=$request->grid;
+        else $grid=1;
+        return view('client.auction.index',compact(['auctions','type','vehicle','grid']));
     }
 }
 
