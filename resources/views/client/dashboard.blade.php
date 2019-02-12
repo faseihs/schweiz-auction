@@ -51,6 +51,7 @@
 
                     @endforeach
                     @endif
+                    @if($grid==2)
                 <div class="col-md-12 col-12 table-responsive">
                     <table class="table">
                         <thead>
@@ -83,6 +84,7 @@
 
                     </table>
                 </div>
+                        @endif
             </div>
 
         </div>
