@@ -7,6 +7,7 @@ use App\Model\Profile;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
@@ -50,4 +51,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function credentials(\Illuminate\Http\Request $request)
+    {
+        //return $request->only($this->username(), 'password');
+        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'approved' => 1];
+    }
+
+    /*protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'email' => 'required|email|max:255|exists:users,email,approved,1',
+            'password' => 'required|confirmed'
+        ]);
+    }*/
 }

@@ -22,9 +22,11 @@ Auth::routes();
 
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 
-
+Route::post('user-request','GuestController@userRequest');
 Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
    Route::get('dashboard','Admin\DashboardController@index');
+    Route::get('/users','Admin\DashboardController@users');
+    Route::get('/user-toggle/{id}','Admin\DashboardController@userToggle');
    Route::resource('auction','Admin\AuctionController');
 });
 

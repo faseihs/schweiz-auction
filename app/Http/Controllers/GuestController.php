@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Model\Auction;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class GuestController extends Controller
 {
@@ -30,5 +32,21 @@ class GuestController extends Controller
         }
         else return view('welcome');
 
+    }
+
+    public function userRequest(Request $request){
+        $this->validate($request, [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+
+        return redirect('/register')->with('success','Request Submitted');
     }
 }

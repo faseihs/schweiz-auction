@@ -118,7 +118,8 @@
                 </a>
             </div>--}}
             <div class="login-form">
-                <form method="POST" action="{{route('register')}}">
+                @include('includes.flash')
+                <form method="POST" action="user-request">
                     @csrf
                     <div class="form-group">
                         <label>Name</label>

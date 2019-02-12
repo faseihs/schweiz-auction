@@ -63,6 +63,9 @@
                     <li id="auctions">
                         <a href="/admin/auction"><i class="menu-icon fa fa-dollar"></i>Auctions</a>
                     </li>
+                        <li id="users">
+                            <a href="/admin/users"><i class="menu-icon fa fa-user"></i>Users</a>
+                        </li>
                 @endif
             </ul>
         </div><!-- /.navbar-collapse -->
