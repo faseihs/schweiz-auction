@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139a61e2-52b6-4913-b0e5-f37905887969" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schweiz-auction.zip" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/client/auction/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="131">
-              <caret line="54" column="63" lean-forward="true" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
+              <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
               <folding>
                 <element signature="e#1544#1579#0#HTML" expanded="true" />
                 <element signature="e#3218#3252#0#HTML" expanded="true" />
@@ -42,33 +42,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="client_new.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/client_new.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="27" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="34" column="70" selection-start-line="34" selection-start-column="70" selection-end-line="34" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/client/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="105">
               <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
               <folding>
                 <element signature="e#1120#1155#0#HTML" expanded="true" />
                 <element signature="e#3115#3149#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminMiddleware.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+              <folding>
+                <element signature="e#39#51#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegisterController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -87,15 +99,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuctionController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="84" column="10" selection-start-line="84" selection-start-column="10" selection-end-line="84" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -172,7 +175,6 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Common/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/common/account.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/common/profile.blade.php" />
@@ -200,6 +202,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
       </list>
     </option>
   </component>
@@ -446,7 +449,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;Fil&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/File.php&#10;crea&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;create&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;flash&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/includes/flash.blade.php&#10;AUc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Profi&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;Guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;Admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;ClientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;web.&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;wel&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/welcome.blade.php&#10;clien&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;AdminM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;CLientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;clie&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;Login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/LoginController.php&#10;Pr&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;app.p&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/config/app.php&#10;Use&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;cli&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;add_login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_110119_add_login_time_to_users.php&#10;Auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;add_st&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_105315_add_status_to_auctions.php&#10;Au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;we&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;create_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103030_create_notifications_table.php&#10;add_win&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103716_add_winner_to_bids.php&#10;Bid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Bid.php&#10;User&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;create_b&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_082403_create_bids_table.php&#10;AUct&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;File&#9;null&#9;null&#10;create_file&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_070300_create_files_table.php&#10;Auct&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;create_au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_102609_create_auctions_table.php&#10;admin.bl&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;create_ve&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_102934_create_vehicles_table.php&#10;env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env" />
+    <property name="SearchEverywhereHistoryKey" value="reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;Mid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;.env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env&#10;web&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;Fil&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/File.php&#10;crea&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;create&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;flash&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/includes/flash.blade.php&#10;AUc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Profi&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;Guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;Admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;ClientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;web.&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;wel&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/welcome.blade.php&#10;clien&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;AdminM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;CLientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;clie&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;Login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/LoginController.php&#10;Pr&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;app.p&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/config/app.php&#10;Use&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;cli&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;add_login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_110119_add_login_time_to_users.php&#10;Auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;add_st&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_105315_add_status_to_auctions.php&#10;Au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;we&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;create_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103030_create_notifications_table.php&#10;add_win&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103716_add_winner_to_bids.php&#10;Bid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Bid.php&#10;User&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;create_b&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_082403_create_bids_table.php&#10;AUct&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;File&#9;null&#9;null&#10;create_file&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_070300_create_files_table.php&#10;Auct&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;create_au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_102609_create_auctions_table.php&#10;admin.bl&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;create_ve&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_01_102934_create_vehicles_table.php&#10;env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -491,12 +494,12 @@
       <workItem from="1549613137309" duration="22000" />
       <workItem from="1549733824917" duration="10000" />
       <workItem from="1549879686991" duration="3469000" />
-      <workItem from="1549972004371" duration="7110000" />
+      <workItem from="1549972004371" duration="8356000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55377000" />
+    <option name="totallyTimeSpent" value="56623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -508,8 +511,8 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.12987013" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" weight="0.4383117" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -531,16 +534,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor>
-            <caret column="23" selection-start-column="23" selection-end-column="23" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_01_102609_create_auctions_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -656,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/common/profile.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -717,13 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="23" column="31" lean-forward="true" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -869,7 +848,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/client/auction/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
-          <caret line="54" column="63" lean-forward="true" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
+          <caret line="54" column="63" selection-start-line="54" selection-start-column="63" selection-end-line="54" selection-end-column="63" />
           <folding>
             <element signature="e#1544#1579#0#HTML" expanded="true" />
             <element signature="e#3218#3252#0#HTML" expanded="true" />
@@ -879,12 +858,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="105">
           <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
           <folding>
             <element signature="e#1120#1155#0#HTML" expanded="true" />
             <element signature="e#3115#3149#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+          <folding>
+            <element signature="e#39#51#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="39" column="29" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
         </state>
       </provider>
     </entry>

@@ -37,7 +37,7 @@ class RegisterController extends Controller
         $user->login=Carbon::now()->toDateTimeString();
         Profile::create(['user_id'=>$user->id]);
         $user->save();
-        if(Auth::user()->role->name=='Admin')
+        if(Auth::user()->role_id==1)
             return '/admin/dashboard';
         else return '/client/dashboard';
     }
