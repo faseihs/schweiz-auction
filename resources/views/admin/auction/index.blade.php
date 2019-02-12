@@ -41,6 +41,7 @@
                                                 <td>{{$auction->start}}</td>
                                                 <td>{{$auction->end}}</td>
                                                 <td>@if($auction->status==1)
+                                                        <a class="btn btn-info btn-sm" href="/admin/auction/{{$auction->id}}/edit"><i class="fa fa-edit"></i> Edit</a>
                                                         <a href="#" onclick="clicked('{{$auction->id}}')" class="btn btn-danger btn-labeled fa fa-trash"> Delete</a>
                                                         <form style="display: none;" id="del{{$auction->id}}" action="/admin/auction/{{$auction->id}}" method="POST">
                                                             <input name="_method" type="hidden" value="DELETE">
