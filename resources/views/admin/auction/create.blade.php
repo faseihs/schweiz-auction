@@ -2,7 +2,7 @@
 
 @section('content')
     @include('includes.errors')
-        <form id="formId" method="POST" action="/admin/auction" enctype="multipart/form-data">
+        <form id="formId"   method="POST" action="/admin/auction" enctype="multipart/form-data">
             @csrf
 
             <div class="row">
@@ -26,13 +26,13 @@
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Start Date</label></div>
                             <div class="col-md-3"><input required type="date" id="text-input" name="start_date"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Start Time</label></div>
-                            <div class="col-md-3"><input required type="time" id="text-input" name="start_time"  class="form-control"></div>
+                            <div class="col-md-3"><input value="00:00" required type="time" id="text-input" name="start_time"  class="form-control"></div>
                         </div>
                         <div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">End Date</label></div>
                             <div class="col-md-3"><input required type="date" id="text-input" name="end_date"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">End Time</label></div>
-                            <div class="col-md-3"><input required type="time" id="text-input" name="end_time"  class="form-control"></div>
+                            <div class="col-md-3"><input value="00:00" required type="time" id="text-input" name="end_time"  class="form-control"></div>
                         </div>
                     </div>
                 </div>
@@ -151,6 +151,10 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        {{--End of Dropzone Preview Template--}}
+
                         <hr>
                         <div class="row form-group">
                             <div class="col-md-2">
@@ -176,9 +180,13 @@
 @section('scripts')
     <script src="{{asset('js/jquery.form.min.js')}}"></script>
     <script src="{{asset('js/notify.min.js')}}"></script>
+    <script src="{{asset('js/dropzone.js')}}"></script>
     <script>
         jQuery('body').addClass('open');
         jQuery(document).ready(function () {
+
+
+
             var loading
             jQuery('#formId').ajaxForm({
                 beforeSubmit:function() {
@@ -192,7 +200,15 @@
                 },
                 error:function (responseText) {
                     jQuery('.notifyjs-wrapper').trigger('notify-hide');
-                    jQuery.notify('Error', 'error');
+
+                    if(responseText.status===401){
+                        for(var index in responseText.responseJSON.error){
+                            jQuery.notify(responseText.responseJSON.error[index][0], 'error');
+                        }
+                    }
+                    else {
+                        jQuery.notify('Error', 'error');
+                    }
 
                 }
 

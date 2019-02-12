@@ -65,14 +65,22 @@ class AuctionController extends Controller
     public function store(Request $request)
     {
         //
-        /*$validator = Validator::make($request->all(), [
-            'status'=>'required|numeric',
-            'comments'=>'required|string'
+        $input=$request->all();
+        $input['start']=$request->start_date.' '.$request->start_time;
+        $input['end']=$request->end_date.' '.$request->end_time;
+        $validator = Validator::make($input, [
+            'title'=>'required',
+            'vehicle'=>'required',
+            'start' => 'required|date|before:end',
+            'end' => 'required|date|after:start',
+            'seats'=>'required|numeric',
+            'displacement'=>'required|numeric',
+            'registration'=>'required|date'
 
         ]);
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 401);
-        }*/
+        }
 
         //dd($request->all());
 
