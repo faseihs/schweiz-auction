@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -40,5 +41,11 @@ class User extends Authenticatable
     }
     public function profile(){
         return $this->hasOne('App\Model\Profile');
+    }
+
+    public function  getOnlineStatus(){
+        if( Carbon::now()->lte(Carbon::parse($this->login)->addMinutes(20)))
+            return true;
+        else return false;
     }
 }

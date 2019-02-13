@@ -27,6 +27,8 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
    Route::get('dashboard','Admin\DashboardController@index');
     Route::get('/users','Admin\DashboardController@users');
     Route::get('/user-toggle/{id}','Admin\DashboardController@userToggle');
+    Route::get('/user/{id}','Admin\DashboardController@userView');
+    Route::post('/user/{id}','Admin\DashboardController@userUpdate');
    Route::resource('auction','Admin\AuctionController');
 });
 

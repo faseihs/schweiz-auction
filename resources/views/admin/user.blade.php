@@ -28,6 +28,7 @@
                                        <th>Name</th>
                                        <th>Email</th>
                                        <th>Status</th>
+                                       <th>Online</th>
                                        <th>Action</th>
                                    </tr>
                                    </thead>
@@ -38,9 +39,13 @@
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
                                             <td><span class="{{$user->approved==1?'alert-success':'alert-warning'}}">{{$user->approved==1?'Approved':'Not Approved'}}</span></td>
+                                            <td>{{$user->getOnlineStatus()?'Yes':'No'}}</td>
                                             <td>
-                                                <a class="btn-link" href="/admin/user-toggle/{{$user->id}}">
+                                                <a class="btn btn-sm btn-link" href="/admin/user-toggle/{{$user->id}}">
                                                     {{$user->approved==1?'Disapprove':'Approve'}}
+                                                </a>
+                                                <a class="btn btn-sm btn-link" href="/admin/user/{{$user->id}}">
+                                                    <i class="fa fa-info"></i> Edit/View
                                                 </a>
                                             </td>
                                         </tr>

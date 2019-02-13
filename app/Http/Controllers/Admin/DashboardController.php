@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DashboardController extends Controller
 {
@@ -38,6 +39,29 @@ class DashboardController extends Controller
             $user->save();
             DB::commit();
             return redirect('/admin/users')->with('success','Updated');
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
+    }
+
+    public function userView($id){
+        $user=User::findOrFail($id);
+        return view('admin.user-edit',compact(['user']));
+    }
+    public function userUpdate(Request $request,$id){
+        $user=User::findOrFail($id);
+        $this->validate($request,[
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        try{
+            DB::beginTransaction();
+            $user->password=Hash::make($request->password);
+            $user->save();
+            DB::commit();
+            return redirect('/admin/user/'.$id)->with('success','Updated');
         }
         catch(\Exception $e){
             DB::rollback();
