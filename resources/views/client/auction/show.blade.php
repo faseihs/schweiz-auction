@@ -8,7 +8,12 @@
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="card">
-                <div class="card-header">Auction Details</div>
+                <div class="card-header">Auction Details
+                    <a class="btn btn-success btn-sm" href="/client/auction-bid/{{$auction->id}}">
+                        <i class="fa fa-check"></i>
+                        Bid
+                    </a>
+                </div>
                 <div class="card-body">
                     <div class="row">
                         <div style="font-size: 13px;" class="col-md-12 table-responsive">
@@ -54,7 +59,7 @@
                             </table>
                         </div>
                     </div>
-                    <hr>
+                    {{--<hr>
                     <hr>
                     <div class="row">
                         <div class="col-md-2">
@@ -63,7 +68,7 @@
                                 Bid
                             </a>
                         </div>
-                    </div>
+                    </div>--}}
                 </div>
             </div>
         </div>
