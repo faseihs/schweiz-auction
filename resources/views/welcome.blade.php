@@ -138,8 +138,38 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+    @if(sizeof($auctions)>0)
+
+    $(function () {
+        var body = $('.jumbotron');
+        var backgrounds = [
+            @foreach($auctions as $auction)
+            'url({{$auction->getThumbnail()}})',
+            @endforeach
+            ]
+        var current = 0;
+
+        function nextBackground() {
+            body.css(
+                'background-image',
+                backgrounds[current = ++current % backgrounds.length]);
+            //body.animate({'background-image':backgrounds[current = ++current % backgrounds.length]});
+
+            setTimeout(nextBackground, 5000);
+        }
+        setTimeout(nextBackground, 5000);
+        body.css('background-image', backgrounds[0]);
+        //body.animate({'background-image':background[0]})
+    });
+    @endif
 
 </script>
+<style>
+    .jumbotron{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
 </body>
 
 </html>

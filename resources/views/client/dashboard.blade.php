@@ -21,7 +21,7 @@
                         <option  {{$grid==2?'selected':''}} value="2">List View</option>
                     </select>--}}
                     <input id="view" value="{{$grid}}" name="view" type="hidden">
-                    <i class="btn btn-link  {{$grid==1?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
+                    <i class="btn btn-link  {{$grid==2?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
                 </div>
             </div>
         </div>

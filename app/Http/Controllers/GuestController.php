@@ -28,9 +28,19 @@ class GuestController extends Controller
         if($user=Auth::user()){
             if($user->role_id==1)
                 return redirect('/admin/dashboard');
-            else return view('welcome');
+            else {
+                $auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
+                return view('welcome',compact(['auctions']));
+
+            }
         }
-        else return view('welcome');
+
+
+        else {
+            $auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
+            return view('welcome', compact(['auctions']));
+
+        }
 
     }
 
