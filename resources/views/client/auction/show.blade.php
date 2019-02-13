@@ -2,6 +2,9 @@
 
 @section('content')
     @include('includes.errors')
+    <hr>
+    <hr>
+    <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="card">
@@ -73,6 +76,15 @@
                         </li>
                     @endforeach
                 <!-- items mirrored twice, total of 12 -->
+                </ul>
+            </div>
+            <div id="carousel" class="flexslider">
+                <ul class="slides">
+                    @foreach($auction->files as $file)
+                        <li>
+                            <img src="{{$file->getImage()}}" />
+                        </li>
+                    @endforeach
                 </ul>
             </div>
 
@@ -237,7 +249,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($auction->bids()->orderBy('amount','DESC')->get() as $key=> $bid)
+                                @foreach($auction->bids()->orderBy('amount','DESC')->where('user_id',Auth::user()->id)->get() as $key=> $bid)
                                     <tr>
                                         <td class="serial">{{$key+1}}</td>
                                         <td>{{$bid->user->name}}</td>
@@ -253,6 +265,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
@@ -286,12 +299,12 @@
 
         jQuery('#carousel').flexslider({
             animation: "slide",
-            /* controlNav: false,
+             controlNav: false,
              animationLoop: false,
              slideshow: false,
              itemWidth: 210,
              itemMargin: 5,
-             asNavFor: '#slider'*/
+             asNavFor: '#slider'
         });
 
         jQuery('#slider').flexslider({
@@ -313,6 +326,15 @@
             src: url('{{asset("fonts/flexslider-icon.eot?#iefix")}}') format('embedded-opentype'), url('{{asset("fonts/flexslider-icon.woff")}}') format('woff'), url('{{asset("fonts/flexslider-icon.ttf")}}') format('truetype'), url('{{asset("fonts/flexslider-icon.svg#flexslider-icon")}}') format('svg');
             font-weight: normal;
             font-style: normal;
+        }
+        #slider{
+            margin-bottom: 4px;
+        }
+
+        #carousel li img{
+            box-shadow: 3px 3px 1px #ccc;
+            -webkit-box-shadow: 3px 3px 1px #ccc;
+            -moz-box-shadow: 3px 3px 1px #ccc;
         }
     </style>
 

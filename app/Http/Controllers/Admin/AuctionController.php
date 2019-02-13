@@ -278,7 +278,7 @@ class AuctionController extends Controller
             if($request->images[0]!=null) {
                 foreach ($request->images as $media) {
                     $imageCount++;
-                    $name = 'auction-image-' . $imageCount . '.' . $media->getClientOriginalExtension();
+                    $name = 'auction-image-' . $imageCount . time().'.' . $media->getClientOriginalExtension();
                     $path = '/public/auctions/' . $auction->id;
                     $media->storeAs($path, $name);
 

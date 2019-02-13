@@ -46,7 +46,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($auction->bids()->orderBy('amount','DESC')->get() as $key=> $bid)
+                                    @foreach($auction->bids()->orderBy('amount','DESC')->where('user_id',Auth::user()->id)->get() as $key=> $bid)
                                         <tr>
                                             <td class="serial">{{$key+1}}</td>
                                             <td>{{$bid->user->name}}</td>

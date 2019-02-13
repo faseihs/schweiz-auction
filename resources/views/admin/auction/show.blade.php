@@ -75,6 +75,16 @@
                 <!-- items mirrored twice, total of 12 -->
                 </ul>
             </div>
+            <div id="carousel" class="flexslider">
+                <ul class="slides">
+                    @foreach($auction->files as $file)
+                        <li>
+                            <img src="{{$file->getImage()}}" />
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+
 
 
         </div>
@@ -285,12 +295,12 @@
 
         jQuery('#carousel').flexslider({
             animation: "slide",
-           /* controlNav: false,
+            controlNav: false,
             animationLoop: false,
             slideshow: false,
             itemWidth: 210,
             itemMargin: 5,
-            asNavFor: '#slider'*/
+            asNavFor: '#slider'
         });
 
         jQuery('#slider').flexslider({
@@ -312,6 +322,16 @@
             src: url('{{asset("fonts/flexslider-icon.eot?#iefix")}}') format('embedded-opentype'), url('{{asset("fonts/flexslider-icon.woff")}}') format('woff'), url('{{asset("fonts/flexslider-icon.ttf")}}') format('truetype'), url('{{asset("fonts/flexslider-icon.svg#flexslider-icon")}}') format('svg');
             font-weight: normal;
             font-style: normal;
+        }
+
+        #slider{
+            margin-bottom: 4px;
+        }
+
+        #carousel li img{
+            box-shadow: 3px 3px 1px #ccc;
+            -webkit-box-shadow: 3px 3px 1px #ccc;
+            -moz-box-shadow: 3px 3px 1px #ccc;
         }
     </style>
 

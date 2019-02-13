@@ -16,10 +16,12 @@
                     </select>
                 </div>
                 <div class="col-sm-1 col-1">
-                    <select class="form-control-sm" name="view" id="view">
+                    {{--<select class="form-control-sm" name="view" id="view">
                         <option {{$grid==1?'selected':''}} value="1">Grid View</option>
                         <option  {{$grid==2?'selected':''}} value="2">List View</option>
-                    </select>
+                    </select>--}}
+                    <input id="view" value="{{$grid}}" name="view" type="hidden">
+                    <i class="btn btn-link  {{$grid==1?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
                 </div>
             </div>
         </div>
@@ -32,9 +34,9 @@
                 @if($grid==1)
                     @foreach($auctions as $auction)
 
-                        <div class="col-md-3">
+                        <div class="col-md-3 col-xl-3">
                             <div class="card" style="width: 18rem;">
-                                <img style="width: 275px;height: 200px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
+                                <img style="width: 100%;height: 200px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">{{$auction->title}}</h5>
                                     <p class="card-text">{{ucfirst($auction->vehicle)}}</p>
@@ -105,51 +107,76 @@
             $('#type').change(function () {
                 if($('#view').val()==1) {
                     if ($('#type').val() == 1) {
-                        window.location = '/client/dashboard?view=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?view=1';
                     }
                     else if ($('#type').val() == 2) {
-                        window.location = '/client/dashboard?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/dashboard?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                 }
                 else {
                     if ($('#type').val() == 1) {
-                        window.location = '/client/dashboard?grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?grid=2';
                     }
                     else if ($('#type').val() == 2) {
-                        window.location = '/client/dashboard?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/dashboard?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                 }
             }) ;
             $('#view').change(function () {
                 if($(this).val()==1) {
                     if ($('#type').val() == 1) {
-                        window.location = '/client/dashboard?view=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?view=1';
                     }
                     else if ($('#type').val() == 2) {
-                        window.location = '/client/dashboard?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/dashboard?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                 }
                 else {
                     if ($('#type').val() == 1) {
-                        window.location = '/client/dashboard?grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?grid=2';
                     }
                     else if ($('#type').val() == 2) {
-                        window.location = '/client/dashboard?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/dashboard?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                 }
             }) ;
         });
+
+        function changeGrid(type){
+            if(type==1) {
+                if ($('#type').val() == 1) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?view=1';
+                }
+                else if ($('#type').val() == 2) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
+                }
+                else if ($('#type').val() == 3) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
+                }
+            }
+            else {
+                if ($('#type').val() == 1) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?grid=2';
+                }
+                else if ($('#type').val() == 2) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
+                }
+                else if ($('#type').val() == 3) {
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
+                }
+            }
+        }
     </script>
 @endsection
