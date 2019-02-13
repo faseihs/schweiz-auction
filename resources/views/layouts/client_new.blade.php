@@ -20,7 +20,7 @@
     <title>Schweiz Auction @yield('title')</title>
 </head>
 
-<body>
+<body style="font-size:13px; ">
 <header style="padding: 0;" class="header bg">
     <div class="container text-white">
         <div class="row">
@@ -49,10 +49,10 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-dark">
     <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
-            <span class="navbar-toggler-icon"></span>
+            <span style="color: black" class="fa fa-bars"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar1">
-            <ul class="navbar-nav">
+            <ul style="font-size: 13px;" class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link active" href="/"><i class="fa fa-home"></i> Home</a>
                 </li>
@@ -62,15 +62,40 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/client/bikes"><i class="fas fa-motorcycle"></i> Bike</a>
                 </li>
+
                @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/client/bid"><i class="fa fa-rub"></i> My Bids</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/common/profile-settings"><i class="fa fa-user"></i> Profile Settings</a>
+                        <a class="nav-link" href="/common/profile-settings"><i class="fa fa-user"></i> Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/common/account-settings"><i class="fa fa-edit"></i> Account Settings</a>
+                        <a class="nav-link" href="/common/account-settings"><i class="fa fa-edit"></i> Account </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge">{{Auth::user()->getNotificationCount()}}</span>
+                        </a>
+                        <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                                @foreach(Auth::user()->notifications as $n)
+                                    <a class="dropdown-item media" href="#">
+                                        <i class="fa fa-check"></i>
+                                        <p>{{$n->text}}</p>
+                                    </a>
+                                @endforeach
+                            @if(sizeof(Auth::user()->notifications)<1)
+                                        <a class="dropdown-item media" href="#">
+
+                                            <p>No Notifications</p>
+                                        </a>
+
+                                @endif
+
+
+                        </div>
                     </li>
                    <li class="nav-item">
                        <a onclick="event.preventDefault();
@@ -79,6 +104,7 @@
                            @csrf
                        </form>
                    </li>
+
 
                 @endauth
 
@@ -139,6 +165,9 @@
 <style>
     #myContainer{
         min-height: 80vh;
+    }
+    .navbar-dark .navbar-nav .show>.nav-link {
+        color: #6d6d6d;
     }
 </style>
 </body>

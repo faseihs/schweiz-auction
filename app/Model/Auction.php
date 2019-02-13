@@ -70,7 +70,8 @@ class Auction extends Model
             $max->save();
             Notification::create([
                 'user_id'=>$user->id,
-                'text'=>'You have won the bid for Auction #'.$this->id
+                'text'=>'You have won the bid for Auction #'.$this->id,
+                'auction_id'=>$this->id
             ]);
             $this->status=0;
             $this->save();

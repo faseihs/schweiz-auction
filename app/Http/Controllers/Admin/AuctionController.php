@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Mail\AuctionCreation;
 use App\Model\Auction;
 use App\Model\File;
+use App\Model\Notification;
 use App\Model\Profile;
 use App\Model\Vehicle;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
@@ -72,7 +76,7 @@ class AuctionController extends Controller
         $validator = Validator::make($input, [
             'title'=>'required',
             'vehicle'=>'required',
-            'start' => 'required|date|before:end',
+            'start' => 'required|date|before:end|after:now',
             'end' => 'required|date|after:start',
             'seats'=>'required|numeric',
             'displacement'=>'required|numeric',
@@ -153,6 +157,18 @@ class AuctionController extends Controller
                 $file->path='auctions/' . $auction->id . '/'.$name;
                 $file->save();
             }
+
+            $users=User::where('role_id',2)->where('approved','1')->get();
+            foreach ($users as $user){
+                Mail::to($user->email)->send(new AuctionCreation($auction));
+                Notification::create([
+                    'user_id'=>$user->id,
+                    'text'=>'New '.$auction->vehicle.' has been added',
+                    'auction_id'=>$auction->id
+                ]);
+            }
+
+            dd($request->all());
 
 
 

@@ -48,4 +48,9 @@ class User extends Authenticatable
             return true;
         else return false;
     }
+
+    public function getNotificationCount(){
+        return
+       sizeof( $this->notifications()->where('created_at','>=',$this->login)->get());
+    }
 }
