@@ -4,18 +4,18 @@
     <section class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-sm-1 col-1">
+                <div class="col-sm-12 col-12">
                     Auctions
 
                 </div>
-                <div class="col-sm-1 col-1">
+                <div class="col-sm-4 col-md-2 col-xl-1">
                     <select class="form-control-sm" name="type" id="type">
                         <option {{$type==1?'selected':''}} value="1">All</option>
                         <option  {{$type==2?'selected':''}} value="2">New</option>
                         <option {{$type==3?'selected':''}} value="3">Closed</option>
                     </select>
                 </div>
-                <div class="col-sm-1 col-1">
+                <div class="col-sm-4 col-md-2 col-xl-1">
                     {{--<select class="form-control-sm" name="view" id="view">
                         <option {{$grid==1?'selected':''}} value="1">Grid View</option>
                         <option  {{$grid==2?'selected':''}} value="2">List View</option>
@@ -34,8 +34,8 @@
                 @if($grid==1)
                     @foreach($auctions as $auction)
 
-                            <div class="col-md-3 col-sm-12 col-xl-3">
-                                <div class="card" style="width: 18rem;">
+                            <div class="col-md-4 col-sm-12 col-xl-3">
+                                <div class="card" >
                                     <img style="width: 100%;height: 200px;" class="card-img-top" src="{{$auction->getThumbnail()}}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$auction->title}}</h5>
