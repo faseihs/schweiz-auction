@@ -56,5 +56,7 @@ Route::group(['prefix'=>'common','middleware'=>'auth'],function (){
     Route::get('profile-settings','Common\UserController@getProfileSettings');
     Route::post('profile-settings','Common\UserController@postProfileSettings');
 
+    Route::get('/mark-all-read','Common\UserController@markAllRead');
+
 });
 

@@ -80,7 +80,7 @@
                         </a>
                         <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
 
-                                @foreach(Auth::user()->notifications as $n)
+                                @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)
                                     <a class="dropdown-item media" href="#">
                                         <i class="fa fa-check"></i>
                                         <p>{{$n->text}}</p>
@@ -153,11 +153,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="{{asset('client/js/animate.js')}}"></script>
 <script src="{{asset('client/js/custom.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
         $(this).ekkoLightbox();
+
+
+
     });
+
+    var count=0;
+    $('#navbarDropdown').click(function () {
+        $('#navbarDropdown .badge').html('0');
+        if(count===0){
+            axios.get('/common/mark-all-read');
+            count=1;
+        }
+
+    })
 
 </script>
 

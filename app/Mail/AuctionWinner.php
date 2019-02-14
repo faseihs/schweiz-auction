@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Model\Auction;
+use App\Model\Bid;
 use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -20,11 +21,13 @@ class AuctionWinner extends Mailable
      */
     private $auction=null;
     private $user=null;
-    public function __construct(Auction $auction, User $user)
+    private $bid=null;
+    public function __construct(Auction $auction, User $user,Bid $bid)
     {
         //
         $this->auction=$auction;
         $this->user=$user;
+        $this->bid=$bid;
     }
 
     /**
@@ -35,6 +38,6 @@ class AuctionWinner extends Mailable
     public function build()
     {
         return $this->view('email.auction-winner')
-            ->with(['auction'=>$this->auction,'user'=>$this->user])->subject('Auction Winner Notification');
+            ->with(['auction'=>$this->auction,'user'=>$this->user,'bid'=>$this->bid])->subject('Auction Winner Notification');
     }
 }

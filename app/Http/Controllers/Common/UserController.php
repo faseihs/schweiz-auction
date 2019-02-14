@@ -96,4 +96,8 @@ class UserController extends Controller
             dd($e);
         }
     }
+
+    public function markAllRead(){
+        Auth::user()->markAllRead();
+    }
 }

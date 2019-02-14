@@ -51,6 +51,13 @@ class User extends Authenticatable
 
     public function getNotificationCount(){
         return
-       sizeof( $this->notifications()->where('created_at','>=',$this->login)->get());
+       sizeof( $this->notifications()->where('marked',0)->get());
+    }
+
+    public function markAllRead(){
+        foreach ($this->notifications as $notification){
+            $notification->marked=1;
+            $notification->save();
+        }
     }
 }

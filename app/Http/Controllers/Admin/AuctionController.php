@@ -374,14 +374,23 @@ class AuctionController extends Controller
             $bid=Bid::findOrFail($id);
             //dd($bid->auction);
             foreach ($bid->auction->bids as $Bid){
+                if($bid->id!=$Bid->id) {
 
-                $Bid->winner=0;
-                $Bid->save();
 
-                Mail::to($Bid->user->email)->send(new AuctionWinner($bid->auction,$bid->user));
+                    $Bid->winner = 0;
+                    $Bid->save();
+
+                    Mail::to($Bid->user->email)->send(new AuctionWinner($bid->auction, $bid->user,$bid));
+                }
             }
             $bid->winner=1;
             $bid->save();
+            Mail::to($bid->user->email)->send(new AuctionWinner($bid->auction, $bid->user,$bid));
+            Notification::create([
+                'user_id'=>$bid->user->id,
+                'text'=>'You have won the bid for Auction #'.$bid->auction->id,
+                'auction_id'=>$bid->auction->id
+            ]);
             DB::commit();
             return redirect('/admin/auction-bids/'.$bid->auction->id)->with('success','Done');
         }
