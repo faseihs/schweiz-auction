@@ -5,6 +5,7 @@
     <br>
     <div class="container">
         <div class="row justify-content-center">
+            @include('includes.flash')
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Bid for Auction #{{$auction->id}}</div>

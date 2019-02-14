@@ -46,7 +46,7 @@ class Auction extends Model
 
 
     public function close(){
-        $bids= $this->bids;
+        /*$bids= $this->bids;
         if(sizeof($bids)<1)
             return;
         $maxAmount= $bids->max(function ($obj){
@@ -62,17 +62,17 @@ class Auction extends Model
             $user= $max->first()->user;
         }
         else
-            $user= $max->first()->user;
+            $user= $max->first()->user;*/
         try{
             DB::beginTransaction();
-            $max=$max->first();
-            $max->winner=1;
-            $max->save();
-            Notification::create([
+            //$max=$max->first();
+            //$max->winner=1;
+            //$max->save();
+            /*Notification::create([
                 'user_id'=>$user->id,
                 'text'=>'You have won the bid for Auction #'.$this->id,
                 'auction_id'=>$this->id
-            ]);
+            ]);*/
             $this->status=0;
             $this->save();
             DB::commit();

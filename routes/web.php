@@ -30,6 +30,9 @@ Route::group(['prefix'=>'admin','middleware'=>'admin'],function (){
     Route::get('/user/{id}','Admin\DashboardController@userView');
     Route::post('/user/{id}','Admin\DashboardController@userUpdate');
    Route::resource('auction','Admin\AuctionController');
+    Route::get('auction-bids/{id}','Admin\AuctionController@bids');
+    Route::get('auction-bid/{id}','Admin\AuctionController@chooseBid');
+    Route::get('auction-bid-remove/{id}','Admin\AuctionController@removeWinner');
 });
 
 

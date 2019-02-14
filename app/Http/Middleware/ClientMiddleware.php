@@ -16,9 +16,10 @@ class ClientMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::user()){
-            if(Auth::user()->role_id==2)
+        if($user=Auth::user()){
+            if($user->role_id==2)
                 return $next($request);
+            else return redirect('/');
         }
 
         else return redirect('/');

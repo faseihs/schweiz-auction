@@ -37,8 +37,9 @@ class GuestController extends Controller
 
 
         else {
-            $auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
-            return view('welcome', compact(['auctions']));
+            /*$auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
+            return view('welcome', compact(['auctions']));*/
+            return redirect('/login');
 
         }
 

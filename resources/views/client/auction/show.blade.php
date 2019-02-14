@@ -251,6 +251,7 @@
                                     <th>Bid by</th>
                                     <th>Amount</th>
                                     <th>Won</th>
+                                    <th>Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -260,6 +261,7 @@
                                         <td>{{$bid->user->name}}</td>
                                         <td>${{$bid->amount}}</td>
                                         <td>{{$bid->winner==1?'Yes':'No'}}</td>
+                                        <td>{{$bid->created_at}}</td>
                                     </tr>
 
                                 @endforeach

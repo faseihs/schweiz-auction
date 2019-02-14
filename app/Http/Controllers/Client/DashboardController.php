@@ -89,7 +89,7 @@ class DashboardController extends Controller
             $auction=Auction::findOrFail($id);
             foreach($auction->bids()->where('user_id',Auth::user()->id)->get() as $bid){
                 if($request->amount<=$bid->amount)
-                    return redirect('/client/bid')->with('deleted','Bid amount lower then previous bids');
+                    return redirect('/client/auction-bid/'.$id)->with('deleted','Bid amount lower then previous bids');
             }
 
             //End Check
@@ -99,7 +99,7 @@ class DashboardController extends Controller
             $bid->amount=$request->amount;
             $bid->save();
             DB::commit();
-            return redirect('/client/bid')->with('success','Successfully Done');
+            return redirect('/client/auction-bid/'.$id)->with('success','Successfully Done');
         }
         catch(\Exception $e){
             DB::rollback();

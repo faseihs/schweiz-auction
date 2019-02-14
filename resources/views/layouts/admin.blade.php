@@ -105,6 +105,13 @@
                                     <p>{{$n->text}}</p>
                                 </a>
                             @endforeach
+                                @if(sizeof(Auth::user()->notifications)<1)
+                                    <a class="dropdown-item media" href="#">
+
+                                        <p>No Notifications</p>
+                                    </a>
+
+                                @endif
 
                         </div>
                     </div>

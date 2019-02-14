@@ -73,9 +73,11 @@
 
 @section('scripts')
     <script>
+
         jQuery(document).ready(function () {
+            jQuery('body').addClass('open');
             jQuery('#users').addClass('active');
         });
 
     </script>
-    @@endsection
+    @endsection

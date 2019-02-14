@@ -113,7 +113,7 @@
                         window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=1';
                     }
                 }
                 else {
@@ -124,7 +124,7 @@
                         window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=2';
                     }
                 }
             }) ;
@@ -137,7 +137,7 @@
                         window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=1';
                     }
                 }
                 else {
@@ -148,7 +148,7 @@
                         window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                     }
                     else if ($('#type').val() == 3) {
-                        window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
+                        window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=2';
                     }
                 }
             }) ;
@@ -163,7 +163,7 @@
                     window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
                 }
                 else if ($('#type').val() == 3) {
-                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=1';
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=1';
                 }
             }
             else {
@@ -174,7 +174,7 @@
                     window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
                 }
                 else if ($('#type').val() == 3) {
-                    window.location = '/client/{{lcfirst($vehicle)}}?type=new&grid=2';
+                    window.location = '/client/{{lcfirst($vehicle)}}?type=closed&grid=2';
                 }
             }
         }

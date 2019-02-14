@@ -12,6 +12,7 @@
                             <option  {{$type==2?'selected':''}} value="2">New</option>
                             <option {{$type==3?'selected':''}} value="3">Closed</option>
                         </select>
+                        <a class="btn btn-success btn-sm" href="/admin/auction/create"><i class="fa fa-plus"></i> Create</a>
                     </div>
 
                     <div class="card-body">
@@ -41,8 +42,8 @@
                                                 <td>{{$auction->start}}</td>
                                                 <td>{{$auction->end}}</td>
                                                 <td>@if($auction->status==1)
-                                                        <a class="btn btn-info btn-sm" href="/admin/auction/{{$auction->id}}/edit"><i class="fa fa-edit"></i> Edit</a>
-                                                        <a href="#" onclick="clicked('{{$auction->id}}')" class="btn btn-danger btn-labeled fa fa-trash"> Delete</a>
+                                                        <a class="btn btn-info btn-sm btn-labeled fa fa-edit" href="/admin/auction/{{$auction->id}}/edit">Edit</a>
+                                                        <a href="#" onclick="clicked('{{$auction->id}}')" class="btn btn-sm btn-danger btn-labeled fa fa-trash"> Delete</a>
                                                         <form style="display: none;" id="del{{$auction->id}}" action="/admin/auction/{{$auction->id}}" method="POST">
                                                             <input name="_method" type="hidden" value="DELETE">
                                                             @csrf
@@ -75,7 +76,8 @@
 @section('scripts')
 
     <script>
-        jQuery('#auctions').addClass('active')
+        jQuery('#auctions').addClass('active');
+        jQuery('body').addClass('open');
         jQuery(document).ready(function () {
             jQuery('#type').change(function () {
                 if(jQuery(this).val()==1)

@@ -19,6 +19,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div  class="col-md-12 table-responsive table-stats order-table ov-h">
+                                @if(sizeof($bids)>0)
                                 <table class="table table-borderless">
                                     <thead>
                                     <tr>
@@ -29,6 +30,7 @@
                                         <th>End</th>
                                         <th>Amount</th>
                                         <th>Won</th>
+                                        <th>Time</th>
                                         {{--<th></th>--}}
                                     </tr>
                                     </thead>
@@ -42,6 +44,7 @@
                                             <td>{{$bid->auction->end}}</td>
                                             <td>${{$bid->amount}}</td>
                                             <td>{{$bid->winner==1?'Yes':'No'}}</td>
+                                            <td>{{$bid->created_at}}</td>
                                             {{--<td>
                                                 @if($bid->auction->status==1)
                                                 <a href="#" onclick="clicked({{$bid->id}})" class="btn btn-sm btn-danger btn-labeled fa fa-trash"> Delete</a>
@@ -59,6 +62,11 @@
                                     @endforeach
                                     </tbody>
                                 </table>
+                                    @else
+
+                                <div class="alert alert-warning">No Bids</div>
+
+                                @endif
                             </div>
                         </div>
                     </div>

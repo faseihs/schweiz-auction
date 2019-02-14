@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Mail\AuctionCreation;
+use App\Mail\AuctionWinner;
 use App\Model\Auction;
+use App\Model\Bid;
 use App\Model\File;
 use App\Model\Notification;
 use App\Model\Profile;
@@ -168,7 +170,7 @@ class AuctionController extends Controller
                 ]);
             }
 
-            dd($request->all());
+            //dd($request->all());
 
 
 
@@ -351,6 +353,55 @@ class AuctionController extends Controller
             $auction->delete();
             DB::commit();
             return redirect('/admin/auction')->with('success','Deleted...');
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
+    }
+
+
+    public  function  bids($id){
+        $auction =Auction::findOrFail($id);
+        $bids=$auction->bids;
+
+        return view('admin.auction.bids',compact(['bids','auction']));
+    }
+
+    public  function chooseBid($id){
+        try{
+            DB::beginTransaction();
+            $bid=Bid::findOrFail($id);
+            //dd($bid->auction);
+            foreach ($bid->auction->bids as $Bid){
+
+                $Bid->winner=0;
+                $Bid->save();
+
+                Mail::to($Bid->user->email)->send(new AuctionWinner($bid->auction,$bid->user));
+            }
+            $bid->winner=1;
+            $bid->save();
+            DB::commit();
+            return redirect('/admin/auction-bids/'.$bid->auction->id)->with('success','Done');
+        }
+        catch(\Exception $e){
+            DB::rollback();
+            dd($e);
+        }
+    }
+
+    public  function removeWinner($id){
+        try{
+            DB::beginTransaction();
+            $auction=Auction::findOrFail($id);
+            foreach ($auction->bids as $Bid){
+
+                $Bid->winner=0;
+                $Bid->save();
+            }
+            DB::commit();
+            return redirect('/admin/auction-bids/'.$auction->id)->with('success','Done');
         }
         catch(\Exception $e){
             DB::rollback();

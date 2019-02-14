@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Auction;
+use App\Model\Bid;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +16,27 @@ class DashboardController extends Controller
     //
 
     public function index(){
-        return view('admin.dashboard');
+        $allAuctions= sizeof(Auction::all());
+        $activeAuctions=sizeof(Auction::where('status',1)->get());
+        $users=User::all();
+        $newUsers=sizeof(User::where('created_at','>=',Carbon::now()->startOfDay()->toDateTimeString())->get());
+        $actve_users=array();
+        foreach ($users as $user){
+            if($user->getOnlineStatus())
+                array_push($actve_users,$user);
+        }
+        $activeUsers=sizeof($actve_users);
+        $allUsers=sizeof($users);
+
+        $bidsToday=sizeof(Bid::where('created_at','>=', Carbon::now()->startOfDay()->toDateTimeString())
+            ->where('created_at','<=',Carbon::now()->endOfDay()->toDateTimeString())->get());
+
+        $allBids=sizeof(Bid::all());
+
+        return view('admin.dashboard',compact([
+            'allAuctions','activeAuctions','newUsers','activeUsers','allUsers',
+            'bidsToday','allBids'
+        ]));
     }
 
     public function users(Request $request){

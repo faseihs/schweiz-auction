@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-4 col-sm-12">
             <div class="card">
-                <div class="card-header">Auction Details</div>
+                <div class="card-header">Auction Details <a class="btn btn-info btn-labled fa fa-info" href="/admin/auction-bids/{{$auction->id}}"> See Bids</a></div>
                 <div class="card-body">
                     <div class="row">
                         <div style="font-size: 13px;" class="col-md-12 table-responsive">
@@ -244,6 +244,7 @@
                                     <th>Bid by</th>
                                     <th>Amount</th>
                                     <th>Won</th>
+                                    <th>Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -253,6 +254,7 @@
                                         <td>{{$bid->user->name}}</td>
                                         <td>${{$bid->amount}}</td>
                                         <td>{{$bid->winner==1?'Yes':'No'}}</td>
+                                        <td>{{$bid->created_at}}</td>
                                     </tr>
 
                                 @endforeach

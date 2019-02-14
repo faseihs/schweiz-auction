@@ -87,6 +87,7 @@
                                     <th>Auction</th>
                                     <th>Amount</th>
                                     <th>Won</th>
+                                    <th>Time</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -96,6 +97,7 @@
                                         <td><a class="btn btn-sm btn-link" href="/admin/auction/{{$bid->auction->id}}">{{$bid->auction->title}}</a></td>
                                         <td>${{$bid->amount}}</td>
                                         <td>{{$bid->winner==1?'Yes':'No'}}</td>
+                                        <td>{{$bid->created_at}}</td>
                                     </tr>
 
                                 @endforeach
@@ -111,4 +113,11 @@
 
 @section('title')
     | Dashboard
+@endsection
+
+@section('scripts')
+            <script>
+                jQuery('body').addClass('open');
+            </script>
+
 @endsection
