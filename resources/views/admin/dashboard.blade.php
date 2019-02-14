@@ -128,4 +128,10 @@
         //jQuery('body').addClass('open');
     </script>
 
+    <style>
+        .card{
+            min-height: 106px !important;
+        }
+    </style>
+
 @endsection
