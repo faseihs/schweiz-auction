@@ -82,7 +82,7 @@
 
                                 @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)
                                     <a class="dropdown-item media" href="#">
-                                        <i class="fa fa-check"></i>
+                                        @if($n->marked==1)<i class="fa fa-check"></i>@endif
                                         <p>{{$n->text}}</p>
                                     </a>
                                 @endforeach
