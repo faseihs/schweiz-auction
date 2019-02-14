@@ -363,7 +363,7 @@ class AuctionController extends Controller
 
     public  function  bids($id){
         $auction =Auction::findOrFail($id);
-        $bids=$auction->bids;
+        $bids=$auction->bids()->orderBy('created_at','DESC')->get();
 
         return view('admin.auction.bids',compact(['bids','auction']));
     }

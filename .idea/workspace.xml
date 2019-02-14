@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="139a61e2-52b6-4913-b0e5-f37905887969" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,15 +21,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Auction.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Model/Auction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="74" column="17" selection-start-line="70" selection-start-column="12" selection-end-line="74" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -94,11 +85,20 @@
       <file leaf-file-name="AuctionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3585">
-              <caret line="391" column="47" selection-start-line="391" selection-start-column="47" selection-end-line="391" selection-end-column="47" />
+            <state relative-caret-position="144">
+              <caret line="365" column="66" selection-start-line="365" selection-start-column="66" selection-end-line="365" selection-end-column="66" />
               <folding>
                 <element signature="e#46#75#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bids.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/bids.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="583">
+              <caret line="50" column="134" selection-start-line="50" selection-start-column="134" selection-end-line="50" selection-end-column="134" />
             </state>
           </provider>
         </entry>
@@ -197,12 +197,12 @@
         <option value="$PROJECT_DIR$/resources/views/email/auction-creation.blade.php" />
         <option value="$PROJECT_DIR$/app/Mail/AuctionWinner.php" />
         <option value="$PROJECT_DIR$/resources/views/email/auction-winner.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Common/UserController.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/client_new.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" />
       </list>
     </option>
   </component>
@@ -506,12 +506,12 @@
       <workItem from="1549990167650" duration="6086000" />
       <workItem from="1550044685175" duration="13017000" />
       <workItem from="1550090205067" duration="55000" />
-      <workItem from="1550145992063" duration="7733000" />
+      <workItem from="1550145992063" duration="7849000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83625000" />
+    <option name="totallyTimeSpent" value="83741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -523,8 +523,8 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.0762987" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30786687" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49924356" visible="true" weight="0.07954545" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30786687" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -758,13 +758,6 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/bids.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="50" column="134" selection-start-line="50" selection-start-column="134" selection-end-line="50" selection-end-column="134" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/auction/bids.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -903,10 +896,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/bids.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="50" column="134" selection-start-line="50" selection-start-column="134" selection-end-line="50" selection-end-column="134" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3585">
-          <caret line="391" column="47" selection-start-line="391" selection-start-column="47" selection-end-line="391" selection-end-column="47" />
+        <state relative-caret-position="144">
+          <caret line="365" column="66" selection-start-line="365" selection-start-column="66" selection-end-line="365" selection-end-column="66" />
           <folding>
             <element signature="e#46#75#0#PHP" expanded="true" />
           </folding>
