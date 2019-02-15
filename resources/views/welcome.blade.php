@@ -72,6 +72,30 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/common/account-settings">Account Settings</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bell"></i>
+                            <span class="badge">{{Auth::user()->getNotificationCount()}}</span>
+                        </a>
+                        <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                                @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)
+                                    <a class="dropdown-item media" href="#">
+                                        @if($n->marked==1)<i class="fa fa-check"></i>@endif
+                                        <p>{{$n->text}}</p>
+                                    </a>
+                                @endforeach
+                            @if(sizeof(Auth::user()->notifications)<1)
+                                        <a class="dropdown-item media" href="#">
+
+                                            <p>No Notifications</p>
+                                        </a>
+
+                                @endif
+
+
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="nav-link" href="#">Logout</a>
@@ -133,6 +157,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
 <script src="{{asset('client/js/animate.js')}}"></script>
 <script src="{{asset('client/js/custom.js')}}"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
         event.preventDefault();
@@ -162,6 +188,16 @@
         //body.animate({'background-image':background[0]})
     });
     @endif
+
+    var count=0;
+    $('#navbarDropdown').click(function () {
+        $('#navbarDropdown .badge').html('0');
+        if(count===0){
+            axios.get('/common/mark-all-read');
+            count=1;
+        }
+
+    })
 
 </script>
 <style>
