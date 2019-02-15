@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
-    //
+    //Get Account Settings View
     public function getAccountSettings(){
         $user= Auth::user();
         return view('common.account',compact('user'));
     }
 
+
+    //Save Account Settings
     public function postAccountSettings(Request $request){
         $user=Auth::user();
 
@@ -55,6 +57,9 @@ class UserController extends Controller
             dd($e);
         }
     }
+
+
+    //Profile Settings View
     public function getProfileSettings(){
         $user=Auth::user();
         if(!$profile=$user->profile) {
@@ -64,6 +69,9 @@ class UserController extends Controller
         $countries=DB::table('countries')->pluck('name','code');
         return view('common.profile',compact(['profile','countries']));
     }
+
+
+    //Save Profile Settings
 
     public function postProfileSettings(Request $request){
         try{
@@ -97,6 +105,8 @@ class UserController extends Controller
         }
     }
 
+
+    //Mark All Notifications Read
     public function markAllRead(){
         Auth::user()->markAllRead();
     }

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class BidController extends Controller
 {
-    //
+    //Getting Bids
     public  function index(Request $request){
         $bids = Auth::user()->bids;
         $type=1;
@@ -30,6 +30,7 @@ class BidController extends Controller
         return view('client.auction.bids',compact(['bids','type']));
     }
 
+    //Deleting Bids
     public function destroy($id){
         try{
             DB::beginTransaction();

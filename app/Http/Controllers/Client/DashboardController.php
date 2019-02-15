@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
-    //
+    //Dashboard Page
     public function index(Request $request){
         $auctions = Auction::all();
         $type=1;
@@ -38,7 +38,7 @@ class DashboardController extends Controller
         return view('client.dashboard',compact(['auctions','type','vehicle','grid']));
     }
 
-
+    //All Auctions
     public function auctions(Request $request){
         $auctions = Auction::all();
         $type=1;
@@ -66,17 +66,21 @@ class DashboardController extends Controller
         return view('client.auction.index',compact(['auctions','type','grid']));
     }
 
+    //Getting One AUction
     public function auction($id)
     {
         $auction=Auction::findOrFail($id);
         return view('client.auction.show',compact('auction'));
     }
 
+    //Getting Bids of Auction
     public function getAuctionBid($id){
         $auction=Auction::findOrFail($id);
         return view('client.auction.bid',compact('auction'));
     }
 
+
+    //Post AUction Bids
     public function postAuctionBid(Request $request,$id){
         $this->validate($request,[
            'amount'=>'required'
@@ -87,6 +91,8 @@ class DashboardController extends Controller
             //Check if Lower Bid Exists
 
             $auction=Auction::findOrFail($id);
+
+            //Checking If Bids with lower amount exists
             foreach($auction->bids()->where('user_id',Auth::user()->id)->get() as $bid){
                 if($request->amount<=$bid->amount)
                     return redirect('/client/auction-bid/'.$id)->with('deleted','Bid amount lower then previous bids');
@@ -107,12 +113,15 @@ class DashboardController extends Controller
         }
     }
 
+
+    //Getting All Bids
     public  function bids(){
         $bids = Auth::user()->bids;
         return view('client.auction.bids',compact('bids'));
     }
 
 
+    //Cars Page
     public function cars(Request $request){
         $auctions = Auction::where('vehicle','car')->get();
         $type=1;
@@ -138,6 +147,8 @@ class DashboardController extends Controller
         else $grid=1;
         return view('client.auction.index',compact(['auctions','type','vehicle','grid']));
     }
+
+    //Bikes Page
     public function bikes(Request $request){
         $auctions = Auction::where('vehicle','bike')->get();
         $type=1;

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class GuestController extends Controller
 {
-    //
+    //Welcome Page
     public function index()
 
     {
@@ -21,10 +21,14 @@ class GuestController extends Controller
             return Carbon::parse($obj->end)->lt(Carbon::now());
         });
 
+
+        //Closing Auctions if their time is finished
         foreach ($auctions as $auction){
             $auction->close();
         }
 
+
+        //Redirecting based on user auth status
         if($user=Auth::user()){
             if($user->role_id==1)
                 return redirect('/admin/dashboard');
@@ -35,7 +39,6 @@ class GuestController extends Controller
             }
         }
 
-
         else {
             /*$auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
             return view('welcome', compact(['auctions']));*/
@@ -45,6 +48,8 @@ class GuestController extends Controller
 
     }
 
+
+    //User Registration Saving
     public function userRequest(Request $request){
         $this->validate($request, [
             'name' => ['required', 'string', 'max:255'],

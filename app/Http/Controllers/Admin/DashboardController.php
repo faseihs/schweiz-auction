@@ -15,11 +15,22 @@ class DashboardController extends Controller
 {
     //
 
+    //Dashbard Controller to get statistics
     public function index(){
+
+        //All Auctions
         $allAuctions= sizeof(Auction::all());
+
+        //Active Auctions
         $activeAuctions=sizeof(Auction::where('status',1)->get());
+
+        //All Users
         $users=User::all();
+
+        //New Users
         $newUsers=sizeof(User::where('created_at','>=',Carbon::now()->startOfDay()->toDateTimeString())->get());
+
+        //Active Users
         $actve_users=array();
         foreach ($users as $user){
             if($user->getOnlineStatus())
@@ -28,9 +39,11 @@ class DashboardController extends Controller
         $activeUsers=sizeof($actve_users);
         $allUsers=sizeof($users);
 
+        //Bids Posted Today
         $bidsToday=sizeof(Bid::where('created_at','>=', Carbon::now()->startOfDay()->toDateTimeString())
             ->where('created_at','<=',Carbon::now()->endOfDay()->toDateTimeString())->get());
 
+        // All Bids
         $allBids=sizeof(Bid::all());
 
         return view('admin.dashboard',compact([
@@ -40,6 +53,8 @@ class DashboardController extends Controller
     }
 
     public function users(Request $request){
+
+        //Getting All Users
         $users= User::where('role_id',2)->get();
         if($request->has('type')) {
             $type = $request->type;
@@ -53,6 +68,7 @@ class DashboardController extends Controller
 
 
     public function userToggle($id){
+        //Approving/ Disapproving User
         $user=User::findOrFail($id);
         try{
             DB::beginTransaction();
@@ -69,10 +85,13 @@ class DashboardController extends Controller
         }
     }
 
+    //view One User by ID
     public function userView($id){
         $user=User::findOrFail($id);
         return view('admin.user-edit',compact(['user']));
     }
+
+    //Update Users Passworrd
     public function userUpdate(Request $request,$id){
         $user=User::findOrFail($id);
         $this->validate($request,[

@@ -32,9 +32,11 @@ class AuctionController extends Controller
         //
         $auctions = Auction::all();
         $type=1;
+        //If Get Query Paramater of Type is set
         if($Type=$request->has('type'))
         {
             $Type=$request->type;
+            //If Query Parameter is 'new'
             if($Type=='new') {
                 if ($log = Auth::user()->login) {
                     $auctions = Auction::where('created_at', '>=', $log)->get();
@@ -42,13 +44,12 @@ class AuctionController extends Controller
                 $type=2;
             }
             else {
-
                 $auctions=Auction::where('status',0)->get();
                 $type=3;
             }
         }
 
-
+        //returning view
         return view('admin.auction.index',compact(['auctions','type']));
     }
 
@@ -59,7 +60,7 @@ class AuctionController extends Controller
      */
     public function create()
     {
-        //
+        //returning view of create auction
         return view('admin.auction.create');
     }
 
@@ -71,10 +72,12 @@ class AuctionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Saving an Auction
         $input=$request->all();
         $input['start']=$request->start_date.' '.$request->start_time;
         $input['end']=$request->end_date.' '.$request->end_time;
+
+        //Validating the data
         $validator = Validator::make($input, [
             'title'=>'required',
             'vehicle'=>'required',
@@ -160,6 +163,7 @@ class AuctionController extends Controller
                 $file->save();
             }
 
+            //Sending Email Notification and In Built Notification
             $users=User::where('role_id',2)->where('approved','1')->get();
             foreach ($users as $user){
                 Mail::to($user->email)->send(new AuctionCreation($auction));
@@ -170,11 +174,6 @@ class AuctionController extends Controller
                     'type'=>'auction'
                 ]);
             }
-
-            //dd($request->all());
-
-
-
             DB::commit();
             return $auction->id;
         }
@@ -192,8 +191,7 @@ class AuctionController extends Controller
      */
     public function show($id)
     {
-        //
-
+        //showing an auction
         $auction=Auction::findOrFail($id);
         return view('admin.auction.show',compact('auction'));
     }
@@ -206,7 +204,7 @@ class AuctionController extends Controller
      */
     public function edit($id)
     {
-        //
+        //showing edit auction page
         $auction=Auction::findOrFail($id);
         //dd($auction->Vehicle->getDescriptions());
         return view('admin.auction.edit',compact('auction'));
@@ -311,6 +309,8 @@ class AuctionController extends Controller
                 }
             }
 
+            //Deleting Files
+
             if($request->has('deletes')){
                 foreach ($request->deletes as $item) {
                     $f=File::find($item);
@@ -319,6 +319,7 @@ class AuctionController extends Controller
                 }
             }
 
+            //Checking if no image exiss of auction , if true gives error
             if(sizeof($auction->files)<1){
                 $validator = Validator::make($input, [
                     'images'=>'required|file',
@@ -344,10 +345,12 @@ class AuctionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //Deleting Auction
         try{
             DB::beginTransaction();
             $auction=Auction::findOrFail($id);
+
+            //Deleting all Bids
             foreach($auction->bids as $bid){
                 $bid->delete();
             }
@@ -365,10 +368,13 @@ class AuctionController extends Controller
     public  function bids($id){
         $auction =Auction::findOrFail($id);
         //$bids=$auction->bids()->orderBy('created_at','DESC')->get();
+        //Getting Bids of Auction
         $bids=$auction->getBids();
         return view('admin.auction.bids',compact(['bids','auction']));
     }
 
+
+    //Function to Choose Bid as Winner
     public  function chooseBid($id){
         try{
             DB::beginTransaction();
@@ -402,6 +408,8 @@ class AuctionController extends Controller
         }
     }
 
+
+    //Function to remove winner
     public  function removeWinner($id){
         try{
             DB::beginTransaction();
