@@ -99,7 +99,7 @@ class DashboardController extends Controller
             $bid->amount=$request->amount;
             $bid->save();
             DB::commit();
-            return redirect('/client/auction-bid/'.$id)->with('success','Successfully Done');
+            return redirect('/client/auction/'.$id)->with('success','Successfully Done');
         }
         catch(\Exception $e){
             DB::rollback();

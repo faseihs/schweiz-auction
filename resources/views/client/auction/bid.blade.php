@@ -7,9 +7,10 @@
         <div class="row justify-content-center">
             @include('includes.flash')
             <div class="col-md-12">
+                    @if($auction->status==1)
                 <div class="card">
                     <div class="card-header">Bid for Auction #{{$auction->id}}</div>
-
+                    
                     <div class="card-body">
                         <form method="POST" action="/client/auction-bid/{{$auction->id}}">
                             @csrf
@@ -34,6 +35,7 @@
 
                     </div>
                 </div>
+                @endif
                 <br>
                 <div class="card">
                     <div class="card-header">All bids</div>
@@ -46,6 +48,8 @@
                                         <th class="serial">#</th>
                                         <th>Bid by</th>
                                         <th>Amount</th>
+                                        <th>Time</th>
+                                        <th>Winner</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -54,6 +58,8 @@
                                             <td class="serial">{{$key+1}}</td>
                                             <td>{{$bid->user->name}}</td>
                                             <td>${{$bid->amount}}</td>
+                                            <td>{{$bid->created_at }}</td>
+                                            <td>{{$bid->winner==1?'Yes':'No'}}</td>
                                         </tr>
 
                                     @endforeach

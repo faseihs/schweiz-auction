@@ -166,7 +166,8 @@ class AuctionController extends Controller
                 Notification::create([
                     'user_id'=>$user->id,
                     'text'=>'New '.$auction->vehicle.' has been added',
-                    'auction_id'=>$auction->id
+                    'auction_id'=>$auction->id,
+                    'type'=>'auction'
                 ]);
             }
 
@@ -361,10 +362,10 @@ class AuctionController extends Controller
     }
 
 
-    public  function  bids($id){
+    public  function bids($id){
         $auction =Auction::findOrFail($id);
-        $bids=$auction->bids()->orderBy('created_at','DESC')->get();
-
+        //$bids=$auction->bids()->orderBy('created_at','DESC')->get();
+        $bids=$auction->getBids();
         return view('admin.auction.bids',compact(['bids','auction']));
     }
 
@@ -389,7 +390,8 @@ class AuctionController extends Controller
             Notification::create([
                 'user_id'=>$bid->user->id,
                 'text'=>'You have won the bid for Auction #'.$bid->auction->id,
-                'auction_id'=>$bid->auction->id
+                'auction_id'=>$bid->auction->id,
+                'type'=>'winner'
             ]);
             DB::commit();
             return redirect('/admin/auction-bids/'.$bid->auction->id)->with('success','Done');

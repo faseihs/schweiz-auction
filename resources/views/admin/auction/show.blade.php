@@ -47,6 +47,10 @@
                                     <td>Ends in</td>
                                     <td id="end"></td>
                                 </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>{{$auction->status==1?'Open':'Closed'}}</td>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>

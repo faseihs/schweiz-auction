@@ -29,7 +29,7 @@ class GuestController extends Controller
             if($user->role_id==1)
                 return redirect('/admin/dashboard');
             else {
-                $auctions= Auction::orderBy('created_at','DESC')->take(3)->get();
+                $auctions= Auction::where('status',1)->orderBy('created_at','DESC')->get();
                 return view('welcome',compact(['auctions']));
 
             }

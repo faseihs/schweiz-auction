@@ -39,7 +39,7 @@ class LoginController extends Controller
         $user->save();
         if(Auth::user()->role->name=='Admin')
             return '/admin/dashboard';
-        else return '/client/dashboard';
+        else return '/';
     }
 
     /**

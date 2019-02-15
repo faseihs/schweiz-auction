@@ -82,4 +82,23 @@ class Auction extends Model
             dd($e);
         }
     }
+
+
+    public function getBids(){
+        $bids=$this->bids;
+        $userIds=collect();
+        foreach($bids as $bid){
+            $userIds->push($bid->user_id);
+        }
+        
+        $userIds=$userIds->unique();
+        $Bids=collect();
+        foreach($userIds as $userId){
+            $amount=$this->bids()->where('user_id',$userId)->max('amount');
+            $bid=$this->bids()->where('user_id',$userId)->where('amount',$amount)->first();
+            $Bids= $Bids->push($bid);
+        }
+
+     return $Bids;
+    }
 }

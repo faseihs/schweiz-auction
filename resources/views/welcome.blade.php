@@ -80,14 +80,13 @@
                         <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
 
                                 @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)
-                                    <a class="dropdown-item media" href="#">
+                                <a class="dropdown-item media" href="{{$n->getLink()}}">
                                         @if($n->marked==1)<i class="fa fa-check"></i>@endif
                                         <p>{{$n->text}}</p>
                                     </a>
                                 @endforeach
                             @if(sizeof(Auth::user()->notifications)<1)
                                         <a class="dropdown-item media" href="#">
-
                                             <p>No Notifications</p>
                                         </a>
 
@@ -122,11 +121,13 @@
 <!--Section-1-->
 <section class="section-1">
     <div class="jumbotron d-flex align-items-center">
-        <div class="gradient"></div>
-        <div class="container-fluid content">
-            <h1 data-aos="fade-up" data-aos-delay="100">Welcome to Schweiz Auction</h1>
-            <p data-aos="fade-up" data-aos-delay="700"><a href="/client/dashboard" class="btn btn-success">See Auctions</a></p>
-        </div>
+        <a class="j-link" href="">
+            <div class="gradient"></div>
+            <div class="container-fluid content">
+                <h1 data-aos="fade-up" data-aos-delay="100">Welcome to Schweiz Auction</h1>
+                <p data-aos="fade-up" data-aos-delay="700"><a id="see-auction" href="/client/dashboard" class="btn btn-success">See Auction</a></p>
+            </div>
+        </a>
         <!--container-fluid end-->
     </div>
 </section>
@@ -175,16 +176,29 @@
             ]
         var current = 0;
 
+        var links = [
+            @foreach($auctions as $auction)
+            '/client/auction/{{$auction->id}}',
+            @endforeach
+        ];
+
         function nextBackground() {
             body.css(
                 'background-image',
                 backgrounds[current = ++current % backgrounds.length]);
             //body.animate({'background-image':backgrounds[current = ++current % backgrounds.length]});
-
+            $('.j-link').attr('href',links[current = ++current % links.length]);
+            $('.#seeAuction').attr('href',links[current = ++current % links.length]);
             setTimeout(nextBackground, 5000);
         }
-        setTimeout(nextBackground, 5000);
-        body.css('background-image', backgrounds[0]);
+
+        if(links.length>0 && backgrounds.length>0){
+            setTimeout(nextBackground, 5000);
+            body.css('background-image', backgrounds[0]);
+            $('.j-link').attr('href',links[0]);
+            $('#see-auction').attr('href',links[current = ++current % links.length]);
+        }
+        
         //body.animate({'background-image':background[0]})
     });
     @endif

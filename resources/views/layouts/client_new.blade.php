@@ -81,7 +81,7 @@
                         <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
 
                                 @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)
-                                    <a class="dropdown-item media" href="#">
+                                    <a class="dropdown-item media" href="{{$n->getLink()}}">
                                         @if($n->marked==1)<i class="fa fa-check"></i>@endif
                                         <p>{{$n->text}}</p>
                                     </a>

@@ -2,6 +2,7 @@
 
 @section('content')
     @include('includes.errors')
+    @include('includes.flash')
     <hr>
     <hr>
     <div class="container-fluid">
@@ -16,6 +17,8 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
+                        @include('includes.errors')
+                        @include('includes.flash')
                         <div style="font-size: 13px;" class="col-md-12 table-responsive">
                             <table class="table table-striped">
                                 <thead>
@@ -54,6 +57,10 @@
                                     <tr>
                                         <td>Ends in</td>
                                         <td id="end"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Status</td>
+                                        <td>{{$auction->status==1?'Open':'Closed'}}</td>
                                     </tr>
                                 </tbody>
                             </table>
