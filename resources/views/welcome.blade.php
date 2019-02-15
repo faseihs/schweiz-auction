@@ -188,7 +188,7 @@
                 backgrounds[current = ++current % backgrounds.length]);
             //body.animate({'background-image':backgrounds[current = ++current % backgrounds.length]});
             $('.j-link').attr('href',links[current = ++current % links.length]);
-            $('.#seeAuction').attr('href',links[current = ++current % links.length]);
+            $('#see-auction').attr('href',links[current = ++current % links.length]);
             setTimeout(nextBackground, 5000);
         }
 
@@ -196,7 +196,7 @@
             setTimeout(nextBackground, 5000);
             body.css('background-image', backgrounds[0]);
             $('.j-link').attr('href',links[0]);
-            $('#see-auction').attr('href',links[current = ++current % links.length]);
+            $('#see-auction').attr('href',links[0]);
         }
         
         //body.animate({'background-image':background[0]})
