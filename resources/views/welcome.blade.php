@@ -188,7 +188,7 @@
                 backgrounds[current = ++current % backgrounds.length]);
             //body.animate({'background-image':backgrounds[current = ++current % backgrounds.length]});
             $('.j-link').attr('href',links[current = ++current % links.length]);
-            $('#see-auction').attr('href',links[current = ++current % links.length]);
+            $('#see-auction').attr('href',links[current]);
             setTimeout(nextBackground, 5000);
         }
 
