@@ -23,7 +23,41 @@
                     <input id="view" value="{{$grid}}" name="view" type="hidden">
                     <i class="btn btn-link  {{$grid==2?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
                 </div>
+
+
             </div>
+            <br>
+            <form id="filterForm" method="POST" action="/client/{{lcfirst($vehicle)}}">
+                @csrf
+            <div class="row form-group">
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-3">Reg Year </label>
+                        <div class="col-md-4"><input name="reg_from" pattern="[0-9]{4}" placeholder="From" class="form-control form-control-sm" type="text"></div>
+                        <div class="col-md-4"><input  name="reg_to" pattern="[0-9]{4}" placeholder="To" class="form-control form-control-sm" type="text"></div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <label class="col-md-4">Displacement </label>
+                        <div class="col-md-4"><input name="disp_from" placeholder="From" class="form-control form-control-sm" type="number"></div>
+                        <div class="col-md-4"><input name="disp_to" placeholder="To" class="form-control form-control-sm" type="number"></div>
+
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <label class="col-md-3">Search</label>
+                        <div class="col-md-9"><input name="search" placeholder="Search.." class="form-control form-control-sm" type="text"></div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <a onclick="document.getElementById('filterForm').submit();" class="btn btn-dark btn-sm text-white">Go !</a>
+                </div>
+            </div>
+            </form>
         </div>
         <hr>
         <div class="container">

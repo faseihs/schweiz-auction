@@ -74,6 +74,14 @@ Route::group(['prefix'=>'client','middleware'=>'client'],function (){
     //View Cars
     Route::get('cars','Client\DashboardController@cars');
     Route::get('bikes','Client\DashboardController@bikes');
+    Route::get('bus','Client\DashboardController@buses');
+    Route::get('others','Client\DashboardController@others');
+
+
+    Route::post('cars','Client\DashboardController@carsPost');
+    Route::post('bikes','Client\DashboardController@bikesPost');
+    Route::post('bus','Client\DashboardController@busesPost');
+    Route::post('others','Client\DashboardController@othersPost');
 
     //View One Auction Details
     Route::get('auction/{id}','Client\DashboardController@auction');

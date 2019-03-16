@@ -16,7 +16,7 @@
                             <div class="col-md-3"><input required type="text" id="text-input" name="title" placeholder="Title" class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Vehicle</label></div>
                             <div class="col-md-3">
-                                {!! Form::select('vehicle',['car'=>'Car','bike'=>'Bike'],null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
+                                {!! Form::select('vehicle',['car'=>'Car','bike'=>'Bike','bus'=>'Bus','others'=>'Others'],null,['class'=>'form-control','placeholder'=>'Select','required']) !!}
                             </div>
 
 

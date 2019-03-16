@@ -56,27 +56,54 @@
                 <li class="nav-item active">
                     <a class="nav-link active" href="/"><i class="fa fa-home"></i> Home</a>
                 </li>
-                <li class="nav-item">
+                {{--<li class="nav-item">
                     <a class="nav-link" href="/client/cars"><i class="fa fa-car"></i> Cars</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/client/bikes"><i class="fa fa-motorcycle"></i> Bike</a>
+                </li>--}}
+
+                <li class="nav-item dropdown">
+                    <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Auctions
+                    </a>
+                    <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                        <a style="color: black;" class="nav-link" href="/client/cars"><i class="fa fa-car"></i> Cars</a>
+
+
+                        <a style="color: black;" class="nav-link" href="/client/bikes"><i class="fa fa-motorcycle"></i> Bike</a>
+                        <a style="color: black;" class="nav-link" href="/client/bus"><i class="fas fa-bus"></i> Bus</a>
+                        <a style="color: black;" class="nav-link" href="/client/others"><i class="fas fa-taxi"></i> Others</a>
+
+                    </div>
                 </li>
                 @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/client/bid">My Bids</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/common/profile-settings">Profile Settings</a>
+
+
+                    <li class="nav-item dropdown">
+                        <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gear"></i>
+                        </a>
+                        <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                                <a style="color: black;" class="nav-link" href="/common/profile-settings">Profile</a>
+
+
+                                <a style="color: black;" class="nav-link" href="/common/account-settings">Account</a>
+
+                        </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/common/account-settings">Account Settings</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
                             <span class="badge">{{Auth::user()->getNotificationCount()}}</span>
                         </a>
+
                         <div style="font-size: 11px;right: 0;left: auto;" class="dropdown-menu " aria-labelledby="navbarDropdown">
 
                                 @foreach(Auth::user()->notifications()->orderBy('created_at','DESC')->get() as $n)

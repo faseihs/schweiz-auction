@@ -38,7 +38,7 @@
                                     @foreach($bids as $key=> $bid)
                                         <tr>
                                             <td class="serial">{{$key+1}}</td>
-                                            <td><a class="btn-link" href="/client/auction/{{$bid->auction->id}}">{{$bid->auction->title}}</a></td>
+                                            <td><a class="btn-link" href="{{$bid->auction->status==1?'/client/auction/'.$bid->auction->id:'#'}}">{{$bid->auction->title}}</a></td>
                                             <td>{{$bid->auction->vehicle}}</td>
                                             <td>{{$bid->auction->start}}</td>
                                             <td>{{$bid->auction->end}}</td>

@@ -56,22 +56,39 @@
                 <li class="nav-item active">
                     <a class="nav-link active" href="/"><i class="fa fa-home"></i> Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/client/cars"><i class="fas fa-car"></i> Cars</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/client/bikes"><i class="fas fa-motorcycle"></i> Bike</a>
+
+                <li class="nav-item dropdown">
+                    <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Auctions
+                    </a>
+                    <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                        <a style="color: black;" class="nav-link" href="/client/cars"><i class="fa fa-car"></i> Cars</a>
+
+
+                        <a style="color: black;" class="nav-link" href="/client/bikes"><i class="fa fa-motorcycle"></i> Bike</a>
+                        <a style="color: black;" class="nav-link" href="/client/bus"><i class="fas fa-bus"></i> Bus</a>
+                        <a style="color: black;" class="nav-link" href="/client/others"><i class="fas fa-taxi"></i> Others</a>
+
+                    </div>
                 </li>
 
                @auth
                     <li class="nav-item">
                         <a class="nav-link" href="/client/bid"><i class="fa fa-rub"></i> My Bids</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/common/profile-settings"><i class="fa fa-user"></i> Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/common/account-settings"><i class="fa fa-edit"></i> Account </a>
+                    <li class="nav-item dropdown">
+                        <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-gear"></i>
+                        </a>
+                        <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
+
+                            <a style="color: black;" class="nav-link" href="/common/profile-settings">Profile</a>
+
+
+                            <a style="color: black;" class="nav-link" href="/common/account-settings">Account</a>
+
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
