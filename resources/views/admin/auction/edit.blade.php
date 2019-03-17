@@ -46,29 +46,85 @@
                             <div class="col-md-3"><input value="{{$auction->Vehicle->mileage}}" placeholder="In text" required type="text" id="text-input" name="mileage"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">1st Reg</label></div>
                             <div class="col-md-3">
-                                {!! Form::date('registration',Carbon::parse($auction->Vehicle->registration)->format('Y-m-d'),['class'=>'form-control','required']) !!}
+                                {!! Form::month('registration',Carbon::parse($auction->Vehicle->registration)->format('Y-m'),['class'=>'form-control','required']) !!}
                             </div>
 
-                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Gear</label></div>
+                            {{--<div class="col-md-1"><label for="text-input" class=" form-control-label">Gear</label></div>
                             <div class="col-md-3">
                                 {!! Form::text('gear',$auction->Vehicle->gear,['class'=>'form-control','required','placeholder'=>'In text']) !!}
-                            </div>
+                            </div>--}}
+
+                            <div class="col-md-1"><label for="text-input" class=" form-control-label">Disp</label></div>
+                            <div class="col-md-3"><input value="{{$auction->Vehicle->displacement}}" placeholder="In Numeric" required type="number" id="text-input" name="displacement"  class="form-control"></div>
+
 
 
 
 
 
                         </div>
+
                         <div class="row form-group">
+                            <label class="col-md-1 control-label">Defects</label>
+                            <div class="col-md-7">
+                                <div class="checkbox-list">
+                                    <label><input type="checkbox" name="defects[]" {{is_int(array_search('engine',$defects))?'checked':''}} id="defects_10" value="engine" > Engine</label>
+                                    <label><input type="checkbox" name="defects[]" {{is_int(array_search('transmission',$defects))?'checked':''}} id="defects_12" value="transmission" > Transmission</label>
+                                    <label><input type="checkbox" name="defects[]" {{is_int(array_search('f-axle',$defects))?'checked':''}} id="defects_20" value="f-axle" > Front Axle</label>
+                                    <label><input type="checkbox" name="defects[]" {{is_int(array_search('r-axle',$defects))?'checked':''}} id="defects_22" value="r-axle" > Rear Axle</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Description Of Damage</h5>
+                            </div>
+                            <div class="col-md-12">
+
+                                <div class="table-responsive">
+                                    <table class="table table-noborder table-nobackground">
+                                        <tbody>
+                                        <tr>
+                                            <td style="width:30px;"><input type="checkbox"  name="damagezone[]" id="damagezone_12"  {{is_int(array_search('1',$damages))?'checked':''}} value="1" title="Avant à droite" ></td>
+                                            <td class="text-center" style="width:170px;"><input type="checkbox" name="damagezone[]" id="damagezone_22" {{is_int(array_search('2',$damages))?'checked':''}} value="2" title="à droite" ></td>
+                                            <td style="width:30px;"><input type="checkbox" name="damagezone[]" id="damagezone_32" value="3" title="Arrière à droite" ></td>
+                                            <td class="text-center" style="min-width:180px;"><input type="checkbox" name="damagezone[]" id="damagezone_50" {{is_int(array_search('9',$damages))?'checked':''}} value="9" title="haut" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="damagezone[]" id="damagezone_11" {{is_int(array_search('4',$damages))?'checked':''}} value="4" title="Avant" ></td>
+                                            <td class="text-center"><img src="https://www.restwertboerse.ch/assets/images/graphics/car-top.png" width="140" alt=""></td>
+                                            <td><input type="checkbox" name="damagezone[]" id="damagezone_31" {{is_int(array_search('5',$damages))?'checked':''}} value="5" title="Arrière" ></td>
+                                            <td class="text-center"><img src="https://www.restwertboerse.ch/assets/images/graphics/car-side.png" width="140" alt=""></td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" name="damagezone[]" id="damagezone_10" {{is_int(array_search('6',$damages))?'checked':''}} value="6" title="Avant à gauche" ></td>
+                                            <td class="text-center"><input type="checkbox" name="damagezone[]"  id="damagezone_20" {{is_int(array_search('7',$damages))?'checked':''}} value="7" title="à gauche" ></td>
+                                            <td><input type="checkbox" name="damagezone[]" id="damagezone_30" {{is_int(array_search('8',$damages))?'checked':''}} value="8" title="Arrière à gauche" ></td>
+                                            <td class="text-center"><input type="checkbox" name="damagezone[]" id="damagezone_40" {{is_int(array_search('10',$damages))?'checked':''}} value="10" title="dessous" ></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-2">Notes</div>
+                            <div class="col-md-10">
+                                <textarea  name="notes" class="form-control">{{$auction->Vehicle->notes}}</textarea>
+                            </div>
+                        </div>
+                        {{--<div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Fuel</label></div>
                             <div class="col-md-3"><input value="{{$auction->Vehicle->fuel}}" placeholder="In text" required type="text" id="text-input" name="fuel"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Disp</label></div>
                             <div class="col-md-3"><input value="{{$auction->Vehicle->displacement}}" placeholder="In Numeric" required type="number" id="text-input" name="displacement"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Body</label></div>
                             <div class="col-md-3"><input value="{{$auction->Vehicle->body}}" placeholder="In text" required type="text" id="text-input" name="body"  class="form-control"></div>
-                        </div>
+                        </div>--}}
 
-                        <div class="row form-group">
+                        {{--<div class="row form-group">
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Interior</label></div>
                             <div class="col-md-3"><input value="{{$auction->Vehicle->interior}}" placeholder="In text" required type="text" id="text-input" name="interior"  class="form-control"></div>
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Exterior Color</label></div>
@@ -80,8 +136,8 @@
                             <div class="col-md-1"><label for="text-input" class=" form-control-label">Wheeldrive</label></div>
                             <div class="col-md-3"><input value="{{$auction->Vehicle->wheeldrive}}" placeholder="In text" required type="text" id="text-input" name="wheeldrive"  class="form-control"></div>
 
-                        </div>
-                        <hr>
+                        </div>--}}
+                        {{--<hr>
                         <div class="row form-group">
                             <div class="col-md-2">Special Equipment</div>
                             <div class="col-md-10">
@@ -104,7 +160,7 @@
                             </div>
                         </div>
 
-                        <hr>
+                        <hr>--}}
 
                         <hr>
                         <div class="row form-group">

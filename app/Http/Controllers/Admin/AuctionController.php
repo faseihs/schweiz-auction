@@ -73,6 +73,7 @@ class AuctionController extends Controller
     public function store(Request $request)
     {
         //Saving an Auction
+        //dd($input=$request->all());
         $input=$request->all();
         $input['start']=$request->start_date.' '.$request->start_time;
         $input['end']=$request->end_date.' '.$request->end_time;
@@ -83,7 +84,6 @@ class AuctionController extends Controller
             'vehicle'=>'required',
             'start' => 'required|date|before:end|after:now',
             'end' => 'required|date|after:start',
-            'seats'=>'required|numeric',
             'displacement'=>'required|numeric',
             'registration'=>'required|date'
 
@@ -113,7 +113,7 @@ class AuctionController extends Controller
             $vehicle= new Vehicle();
             $vehicle->auction_id=$auction->id;
             $vehicle->mileage= $request->mileage;
-            $vehicle->registration= $request->registration;
+            $vehicle->registration= $request->registration.'-01';
             $vehicle->gear= $request->wheeldrive;
             $vehicle->fuel= $request->fuel;
             $vehicle->body= $request->body;
@@ -127,6 +127,11 @@ class AuctionController extends Controller
             $vehicle->serial_equipment= $request->serial_equipment;
             $vehicle->type= $request->vehicle;
             $vehicle->financial_services= $request->financial_services;
+            $vehicle->notes= $request->notes;
+            if(isset($request->damagezone))
+                $vehicle->damages=implode(',',$request->damagezone);
+            if(isset($request->defects))
+                $vehicle->defects=implode(',',$request->defects);
 
 
             //Conditions Combine
@@ -193,7 +198,10 @@ class AuctionController extends Controller
     {
         //showing an auction
         $auction=Auction::findOrFail($id);
-        return view('admin.auction.show',compact('auction'));
+        $defects= $auction->Vehicle->defects?explode(',',$auction->Vehicle->defects):[];
+        $damages= $auction->Vehicle->damages?explode(',',$auction->Vehicle->damages):[];
+
+        return view('admin.auction.show',compact(['auction','defects','damages']));
     }
 
     /**
@@ -207,7 +215,10 @@ class AuctionController extends Controller
         //showing edit auction page
         $auction=Auction::findOrFail($id);
         //dd($auction->Vehicle->getDescriptions());
-        return view('admin.auction.edit',compact('auction'));
+        $defects= $auction->Vehicle->defects?explode(',',$auction->Vehicle->defects):[];
+        $damages= $auction->Vehicle->damages?explode(',',$auction->Vehicle->damages):[];
+        //dd(array_search('enginsse',$defects)>=0);
+        return view('admin.auction.edit',compact(['auction','defects','damages']));
     }
 
     /**
@@ -229,7 +240,7 @@ class AuctionController extends Controller
             'vehicle'=>'required',
             'start' => 'required|date|before:end',
             'end' => 'required|date|after:start',
-            'seats'=>'required|numeric',
+
             'displacement'=>'required|numeric',
             'registration'=>'required|date'
 
@@ -257,7 +268,7 @@ class AuctionController extends Controller
             $vehicle= $auction->Vehicle;
             $vehicle->auction_id=$auction->id;
             $vehicle->mileage= $request->mileage;
-            $vehicle->registration= $request->registration;
+            $vehicle->registration= $request->registration.'-01';
             $vehicle->gear= $request->wheeldrive;
             $vehicle->fuel= $request->fuel;
             $vehicle->body= $request->body;
@@ -270,7 +281,12 @@ class AuctionController extends Controller
             $vehicle->special_equipment= $request->special_equipment;
             $vehicle->serial_equipment= $request->serial_equipment;
             $vehicle->type= $request->vehicle;
+            $vehicle->notes= $request->notes;
             $vehicle->financial_services= $request->financial_services;
+            if(isset($request->damagezone))
+                $vehicle->damages=implode(',',$request->damagezone);
+            if(isset($request->defects))
+            $vehicle->defects=implode(',',$request->defects);
 
 
             //Conditions Combine

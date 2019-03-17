@@ -115,7 +115,7 @@
                                     <td>1st Reg</td>
                                     <td>{{$auction->Vehicle->registration}}</td>
                                 </tr>
-                                <tr>
+                                {{--<tr>
                                     <td>Wheeldrive</td>
                                     <td>{{$auction->Vehicle->wheeldrive}}</td>
                                 </tr>
@@ -126,12 +126,12 @@
                                 <tr>
                                     <td>Fuel</td>
                                     <td>{{$auction->Vehicle->fuel}}</td>
-                                </tr>
+                                </tr>--}}
                                 <tr>
                                     <td>Displacement</td>
                                     <td>{{$auction->Vehicle->displacement}}</td>
                                 </tr>
-                                <tr>
+                                {{--<tr>
                                     <td>Body</td>
                                     <td>{{$auction->Vehicle->body}}</td>
                                 </tr>
@@ -150,14 +150,39 @@
                                 <tr>
                                     <td>Transported By</td>
                                     <td>{{$auction->Vehicle->transported_by}}</td>
-                                </tr>
+                                </tr>--}}
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
                     <hr>
+                    @if(sizeof($defects)>0)
+
+                    <div class="row">
+
+                        <h5 class="col-md-12 font-weight-bold">Defects</h5>
+                    </div>
                     <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group">
+                                @foreach(explode(',',$auction->Vehicle->defects) as $c)
+                                    <li style="font-size: 13px;" class="list-group-item"> {{ucfirst($c)}}</li>
+
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+                    @if($auction->Vehicle->notes)
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-3 font-weight-bold">Notes :</div>
+                        <div class="col-md-9">{{$auction->Vehicle->notes?$auction->Vehicle->notes:'-'}}</div>
+                    </div>
+                        @endif
 
 
 
@@ -169,7 +194,7 @@
             <div class="card">
                 <div class="card-header">Further Descriptions</div>
                 <div class="card-body">
-                    <div class="row">
+                    {{--<div class="row">
                         <div class="col-md-3 font-weight-bold">Serial Equipment</div>
                         <div class="col-md-9">{{$auction->Vehicle->serial_equipment}}</div>
                     </div>
@@ -186,12 +211,11 @@
                         <div class="col-md-9">{{$auction->Vehicle->financial_services}}</div>
                     </div>
                     <hr>
-                    <hr>
+                    <hr>--}}
                     <div class="row">
-
                         <h5 class="col-md-12 font-weight-bold">Vehicle Description</h5>
                     </div>
-                    <hr>
+
                     <div class="row">
                         <div class="col-md-12">
                             <table class="table table-striped">
@@ -232,6 +256,43 @@
                             </ul>
                         </div>
                     </div>
+                    <hr>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h5>Description Of Damage</h5>
+                        </div>
+                        <div class="col-md-12">
+
+                            <div class="table-responsive">
+                                <table class="table table-noborder table-nobackground">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width:30px;"><input type="checkbox"  disabled name="damagezone[]" id="damagezone_12" readonly {{is_int(array_search('1',$damages))?'checked':''}} value="1" title="Avant à droite" ></td>
+                                        <td class="text-center" style="width:170px;"><input disabled type="checkbox" name="damagezone[]" id="damagezone_22" {{is_int(array_search('2',$damages))?'checked':''}} value="2" title="à droite" ></td>
+                                        <td style="width:30px;"><input disabled type="checkbox" name="damagezone[]" id="damagezone_32" value="3" title="Arrière à droite" ></td>
+                                        <td class="text-center" style="min-width:180px;"><input disabled type="checkbox" name="damagezone[]" id="damagezone_50" {{is_int(array_search('9',$damages))?'checked':''}} value="9" title="haut" ></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input disabled type="checkbox" name="damagezone[]" id="damagezone_11" {{is_int(array_search('4',$damages))?'checked':''}} value="4" title="Avant" ></td>
+                                        <td class="text-center"><img src="https://www.restwertboerse.ch/assets/images/graphics/car-top.png" width="140" alt=""></td>
+                                        <td><input disabled type="checkbox" name="damagezone[]" id="damagezone_31" {{is_int(array_search('5',$damages))?'checked':''}} value="5" title="Arrière" ></td>
+                                        <td class="text-center"><img src="https://www.restwertboerse.ch/assets/images/graphics/car-side.png" width="140" alt=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input disabled type="checkbox" name="damagezone[]" id="damagezone_10" {{is_int(array_search('6',$damages))?'checked':''}} value="6" title="Avant à gauche" ></td>
+                                        <td class="text-center"><input disabled type="checkbox" name="damagezone[]"  id="damagezone_20" {{is_int(array_search('7',$damages))?'checked':''}} value="7" title="à gauche" ></td>
+                                        <td><input disabled type="checkbox" name="damagezone[]" id="damagezone_30" {{is_int(array_search('8',$damages))?'checked':''}} value="8" title="Arrière à gauche" ></td>
+                                        <td class="text-center"><input disabled type="checkbox" name="damagezone[]" id="damagezone_40" {{is_int(array_search('10',$damages))?'checked':''}} value="10" title="dessous" ></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

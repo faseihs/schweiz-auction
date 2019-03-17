@@ -4,25 +4,27 @@
     <section class="portfolio">
         <div class="container">
             <div class="row">
-                <div class="col-sm-1 col-1">
+                <div class="col-sm-12 col-md-12">
                     {{$vehicle?$vehicle:'Auctions'}}
+                    <input id="view" value="{{$grid}}" name="view" type="hidden">
+                    <i class="btn btn-link  {{$grid==2?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
 
                 </div>
-                <div class="col-sm-4 col-md-2 col-xl-1">
+                {{--<div class="col-sm-4 col-md-2 col-xl-1">
                     <select class="form-control-sm" name="type" id="type">
                         <option {{$type==1?'selected':''}} value="1">All</option>
                         <option  {{$type==2?'selected':''}} value="2">New</option>
                         <option {{$type==3?'selected':''}} value="3">Closed</option>
                     </select>
-                </div>
-                <div class="col-sm-4 col-md-2 col-xl-1">
-                    {{--<select class="form-control-sm" name="view" id="view">
+                </div>--}}
+                {{--<div class="col-sm-4 col-md-2 col-xl-1">
+                    --}}{{--<select class="form-control-sm" name="view" id="view">
                         <option {{$grid==1?'selected':''}} value="1">Grid View</option>
                         <option  {{$grid==2?'selected':''}} value="2">List View</option>
-                    </select>--}}
+                    </select>--}}{{--
                     <input id="view" value="{{$grid}}" name="view" type="hidden">
                     <i class="btn btn-link  {{$grid==2?'fas fa-grip-horizontal':'fa fa-list'}}" onclick="changeGrid({{$grid==1?2:1}})"></i>
-                </div>
+                </div>--}}
 
 
             </div>

@@ -62,6 +62,7 @@
                         Auctions
                     </a>
                     <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
+                        <a style="color: black;" class="nav-link" href="/client/all"><i class="fa fa-taxi"></i> All</a>
 
                         <a style="color: black;" class="nav-link" href="/client/cars"><i class="fa fa-car"></i> Cars</a>
 

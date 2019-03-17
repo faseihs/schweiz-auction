@@ -71,7 +71,9 @@ class DashboardController extends Controller
     public function auction($id)
     {
         $auction=Auction::findOrFail($id);
-        return view('client.auction.show',compact('auction'));
+        $defects= $auction->Vehicle->defects?explode(',',$auction->Vehicle->defects):[];
+        $damages= $auction->Vehicle->damages?explode(',',$auction->Vehicle->damages):[];
+        return view('client.auction.show',compact(['auction','defects','damages']));
     }
 
     //Getting Bids of Auction
@@ -224,6 +226,33 @@ class DashboardController extends Controller
         }
 
         $vehicle='Others';
+        if($request->has('grid'))
+            $grid=$request->grid;
+        else $grid=1;
+        return view('client.auction.index',compact(['auctions','type','vehicle','grid']));
+    }
+
+    //Others
+    public function allAuctions(Request $request){
+        $auctions = Auction::where('status',1)->get();
+        $type=1;
+        if($Type=$request->has('type'))
+        {
+            $Type=$request->type;
+            if($Type=='new') {
+                if ($log = Auth::user()->login) {
+                    $auctions = Auction::where('status',1)->where('created_at', '>=', Carbon::parse($log)->subDay(1))->get();
+                }
+                $type=2;
+            }
+            else {
+
+                $auctions=Auction::where('status',0)->where('vehicle','others')->get();
+                $type=3;
+            }
+        }
+
+        $vehicle='All';
         if($request->has('grid'))
             $grid=$request->grid;
         else $grid=1;
