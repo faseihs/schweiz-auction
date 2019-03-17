@@ -46,9 +46,9 @@
     <!--container-->
 </header>
 <span class="position-absolute trigger"><!-- hidden trigger to apply 'stuck' styles --></span>
-<nav class="navbar navbar-expand-sm sticky-top navbar-dark">
+<nav id="#navbar1" class="navbar navbar-expand-sm sticky-top navbar-dark">
     <div class="container">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
+        <button style="margin-right: auto;margin-top: 80px;" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar1">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar1">
@@ -86,7 +86,7 @@
 
                     <li class="nav-item dropdown">
                         <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-gear"></i>
+                            <i class="fa fa-gear"></i> Settings
                         </a>
                         <div  class="dropdown-menu " aria-labelledby="navbarDropdown">
 
