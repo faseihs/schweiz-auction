@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="139a61e2-52b6-4913-b0e5-f37905887969" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/auction/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/auction/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/auction/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/auction/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/auction/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/auction/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/client/auction/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/client/auction/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/client_new.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/client_new.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
@@ -26,42 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/create.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="114" column="30" selection-start-line="109" selection-start-column="23" selection-end-line="114" selection-end-column="30" />
-              <folding>
-                <element signature="e#5359#5378#0#HTML" expanded="true" />
-                <element signature="e#5546#5566#0#HTML" expanded="true" />
-                <element signature="e#5708#5727#0#HTML" expanded="true" />
-                <element signature="e#5897#5921#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuctionController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="218" column="86" selection-start-line="218" selection-start-column="86" selection-end-line="218" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="184" column="30" lean-forward="true" selection-start-line="159" selection-start-column="20" selection-end-line="184" selection-end-column="30" />
-              <folding>
-                <element signature="e#7503#7523#0#HTML" expanded="true" />
-                <element signature="e#11203#11222#0#HTML" expanded="true" />
-                <element signature="e#11447#11467#0#HTML" expanded="true" />
-                <element signature="e#11664#11683#0#HTML" expanded="true" />
-                <element signature="e#11856#11880#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="4232">
+              <caret line="184" column="30" selection-start-line="159" selection-start-column="20" selection-end-line="184" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -69,30 +33,32 @@
       <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/client/auction/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="464" column="30" selection-start-line="464" selection-start-column="30" selection-end-line="464" selection-end-column="30" />
+            <state relative-caret-position="23">
+              <caret line="378" column="57" selection-start-line="378" selection-start-column="57" selection-end-line="378" selection-end-column="57" />
               <folding>
-                <element signature="e#20513#20537#0#HTML" expanded="true" />
-                <element signature="e#23548#23567#0#HTML" expanded="true" />
-                <element signature="e#23805#23825#0#HTML" expanded="true" />
-                <element signature="e#24027#24046#0#HTML" expanded="true" />
-                <element signature="e#24224#24248#0#HTML" expanded="true" />
+                <element signature="e#15415#15454#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/edit.blade.php">
+      <file leaf-file-name="auctions.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/client/auctions.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+            <state relative-caret-position="184">
+              <caret line="46" column="109" selection-start-line="46" selection-start-column="109" selection-end-line="46" selection-end-column="109" />
               <folding>
-                <element signature="e#5841#5860#0#HTML" expanded="true" />
-                <element signature="e#6027#6047#0#HTML" expanded="true" />
-                <element signature="e#6188#6207#0#HTML" expanded="true" />
-                <element signature="e#6376#6400#0#HTML" expanded="true" />
+                <element signature="e#61#86#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/client/auction/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="123" column="22" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="123" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -100,35 +66,35 @@
       <file leaf-file-name="welcome.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="70" column="119" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="119" />
+            <state relative-caret-position="440">
+              <caret line="84" column="25" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="74" column="86" selection-start-line="74" selection-start-column="86" selection-end-line="74" selection-end-column="86" />
+            <state relative-caret-position="287">
+              <caret line="61" column="34" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="61" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019_02_13_113847_add_auction_id_to_notification.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php">
+      <file leaf-file-name="dashboard.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/client/dashboard.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
+            <state relative-caret-position="2254">
+              <caret line="98" column="11" lean-forward="true" selection-start-line="93" selection-end-line="98" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019_03_17_154333_add_notes_to_vehicles.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_17_154333_add_notes_to_vehicles.php">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+            <state relative-caret-position="323">
+              <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -136,8 +102,17 @@
       <file leaf-file-name="client_new.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/client_new.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="64" column="119" selection-start-line="64" selection-start-column="119" selection-end-line="64" selection-end-column="119" />
+            <state relative-caret-position="302">
+              <caret line="77" column="25" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="77" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DashboardController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="576" column="63" selection-start-line="576" selection-start-column="63" selection-end-line="576" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -184,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_04_110119_add_login_time_to_users.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/common/account.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/common/profile.blade.php" />
@@ -223,17 +197,18 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Common/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GuestController.php" />
         <option value="$PROJECT_DIR$/resources/views/client/auction/bids.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/client/auction/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/client_new.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_17_154333_add_notes_to_vehicles.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/auction/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/auction/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/auction/show.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php" />
+        <option value="$PROJECT_DIR$/resources/views/client/auctions.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/client_new.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/client/auction/show.blade.php" />
       </list>
     </option>
@@ -357,6 +332,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -475,11 +451,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="add_note&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_154333_add_notes_to_vehicles.php&#10;add_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php&#10;add&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php&#10;ad_dama&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php&#10;wel&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/welcome.blade.php&#10;web&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;web.&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;User&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;Auction&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Aucti&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Mail/AuctionWinner.php&#10;Auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Admin/AuctionController.php&#10;env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env&#10;ClientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;Bid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Bid.php&#10;Bi&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;we&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;Use&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;add_auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php&#10;Regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;Login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/LoginController.php&#10;reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/auth/register.blade.php&#10;regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/auth/register.blade.php&#10;Reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;add_app&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_12_174336_add_approved_to_users.php&#10;Vehi&#9;null&#9;null&#10;in&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/index.blade.php&#10;Mid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;.env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env&#10;Fil&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/File.php&#10;crea&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;create&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;flash&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/includes/flash.blade.php&#10;AUc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Profi&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;Guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;Admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;clien&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;AdminM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;CLientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;clie&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Pr&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;app.p&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/config/app.php&#10;cli&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;add_login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_110119_add_login_time_to_users.php&#10;add_st&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_105315_add_status_to_auctions.php&#10;Au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;create_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103030_create_notifications_table.php&#10;add_win&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103716_add_winner_to_bids.php" />
+    <property name="SearchEverywhereHistoryKey" value="web&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;add_note&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_154333_add_notes_to_vehicles.php&#10;add_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php&#10;add&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php&#10;ad_dama&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php&#10;wel&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/welcome.blade.php&#10;web.&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;User&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;Auction&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Aucti&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Mail/AuctionWinner.php&#10;Auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Admin/AuctionController.php&#10;env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env&#10;ClientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;Bid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Bid.php&#10;Bi&#9;null&#9;null&#10;admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/admin.blade.php&#10;we&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/routes/web.php&#10;Use&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/User.php&#10;add_auc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php&#10;Regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;Login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/LoginController.php&#10;reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/auth/register.blade.php&#10;regis&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/auth/register.blade.php&#10;Reg&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/Auth/RegisterController.php&#10;add_app&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_12_174336_add_approved_to_users.php&#10;Vehi&#9;null&#9;null&#10;in&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/index.blade.php&#10;Mid&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;.env&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/.env&#10;Fil&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/File.php&#10;crea&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;create&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/admin/auction/create.blade.php&#10;flash&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/includes/flash.blade.php&#10;AUc&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;Profi&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;Guest&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Controllers/GuestController.php&#10;Admin&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;clien&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;AdminM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/AdminMiddleware.php&#10;CLientM&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Http/Middleware/ClientMiddleware.php&#10;clie&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;Pr&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Profile.php&#10;app.p&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/config/app.php&#10;cli&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/resources/views/layouts/client.blade.php&#10;add_login&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_110119_add_login_time_to_users.php&#10;add_st&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_105315_add_status_to_auctions.php&#10;Au&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/app/Model/Auction.php&#10;create_no&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103030_create_notifications_table.php&#10;add_win&#9;FILE&#9;file://C:/xampp7/htdocs/fiverr/schweiz-auction/database/migrations/2019_02_04_103716_add_winner_to_bids.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -536,12 +511,15 @@
       <workItem from="1552713740053" duration="1759000" />
       <workItem from="1552748053312" duration="4370000" />
       <workItem from="1552804719993" duration="606000" />
-      <workItem from="1552827249139" duration="5085000" />
+      <workItem from="1552827249139" duration="5888000" />
+      <workItem from="1552843410464" duration="597000" />
+      <workItem from="1553082234535" duration="17000" />
+      <workItem from="1553360402274" duration="1430000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100701000" />
+    <option name="totallyTimeSpent" value="103548000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -553,8 +531,8 @@
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49848714" weight="0.26785713" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34266263" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49848714" visible="true" weight="0.13311689" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35854766" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -576,13 +554,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Model/File.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -646,13 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="244" column="16" selection-end-line="283" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="33" lean-forward="true" selection-end-line="102" />
         </state>
       </provider>
     </entry>
@@ -795,13 +759,6 @@
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/client/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="56" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/client.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -830,34 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="78" column="19" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/client/auction/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="26" column="26" selection-start-line="19" selection-start-column="16" selection-end-line="26" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="70" column="119" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/client_new.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="64" column="119" selection-start-line="64" selection-start-column="119" selection-end-line="64" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_17_150943_add_damage_to_vehicles.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -867,82 +796,111 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_13_113847_add_auction_id_to_notification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="644">
           <caret line="30" column="45" selection-start-line="30" selection-start-column="45" selection-end-line="30" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_03_17_154333_add_notes_to_vehicles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
+        <state relative-caret-position="644">
           <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/create.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="2622">
           <caret line="114" column="30" selection-start-line="109" selection-start-column="23" selection-end-line="114" selection-end-column="30" />
-          <folding>
-            <element signature="e#5359#5378#0#HTML" expanded="true" />
-            <element signature="e#5546#5566#0#HTML" expanded="true" />
-            <element signature="e#5708#5727#0#HTML" expanded="true" />
-            <element signature="e#5897#5921#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="116" column="30" lean-forward="true" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
-          <folding>
-            <element signature="e#5841#5860#0#HTML" expanded="true" />
-            <element signature="e#6027#6047#0#HTML" expanded="true" />
-            <element signature="e#6188#6207#0#HTML" expanded="true" />
-            <element signature="e#6376#6400#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="2668">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AuctionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="4646">
           <caret line="218" column="86" selection-start-line="218" selection-start-column="86" selection-end-line="218" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="74" column="86" selection-start-line="74" selection-start-column="86" selection-end-line="74" selection-end-column="86" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="184" column="30" lean-forward="true" selection-start-line="159" selection-start-column="20" selection-end-line="184" selection-end-column="30" />
+        <state relative-caret-position="4232">
+          <caret line="184" column="30" selection-start-line="159" selection-start-column="20" selection-end-line="184" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2254">
+          <caret line="98" column="11" lean-forward="true" selection-start-line="93" selection-end-line="98" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="72" column="24" selection-start-line="72" selection-start-column="24" selection-end-line="72" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Client/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="576" column="63" selection-start-line="576" selection-start-column="63" selection-end-line="576" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/auction/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="61" column="34" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="61" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/auction/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="123" column="22" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="123" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/client/auctions.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="46" column="109" selection-start-line="46" selection-start-column="109" selection-end-line="46" selection-end-column="109" />
           <folding>
-            <element signature="e#7503#7523#0#HTML" expanded="true" />
-            <element signature="e#11203#11222#0#HTML" expanded="true" />
-            <element signature="e#11447#11467#0#HTML" expanded="true" />
-            <element signature="e#11664#11683#0#HTML" expanded="true" />
-            <element signature="e#11856#11880#0#HTML" expanded="true" />
+            <element signature="e#61#86#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/client_new.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="77" column="25" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="77" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="84" column="25" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/client/auction/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="464" column="30" selection-start-line="464" selection-start-column="30" selection-end-line="464" selection-end-column="30" />
+        <state relative-caret-position="23">
+          <caret line="378" column="57" selection-start-line="378" selection-start-column="57" selection-end-line="378" selection-end-column="57" />
           <folding>
-            <element signature="e#20513#20537#0#HTML" expanded="true" />
-            <element signature="e#23548#23567#0#HTML" expanded="true" />
-            <element signature="e#23805#23825#0#HTML" expanded="true" />
-            <element signature="e#24027#24046#0#HTML" expanded="true" />
-            <element signature="e#24224#24248#0#HTML" expanded="true" />
+            <element signature="e#15415#15454#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

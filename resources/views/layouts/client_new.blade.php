@@ -56,8 +56,11 @@
                 <li class="nav-item active">
                     <a class="nav-link active" href="/"><i class="fa fa-home"></i> Home</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/client/auctions"><i class="fa fa-car"></i> Auctions</a>
+                </li>
 
-                <li class="nav-item dropdown">
+                {{--<li class="nav-item dropdown">
                     <a  style="color: #6d6d6d" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Auctions
                     </a>
@@ -72,7 +75,7 @@
                         <a style="color: black;" class="nav-link" href="/client/others"><i class="fas fa-taxi"></i> Others</a>
 
                     </div>
-                </li>
+                </li>--}}
 
                @auth
                     <li class="nav-item">

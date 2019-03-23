@@ -560,5 +560,21 @@ class DashboardController extends Controller
         else $grid=1;
         return view('client.auction.index',compact(['auctions','type','vehicle','grid']));
     }
+
+
+    public function tabbedAuctions(Request $request){
+        $type=null;
+        if($request->has('type')){
+            $type=$request->type;
+            $auctions=Auction::where('status',1)->where('vehicle',$type)->get();
+        }
+        else {
+            $type='all';
+            $auctions=Auction::where('status',1)->get();
+        }
+
+
+        return view('client.auctions',compact(['auctions','type']));
+    }
 }
 

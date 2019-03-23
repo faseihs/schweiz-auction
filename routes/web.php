@@ -70,6 +70,7 @@ Route::group(['prefix'=>'client','middleware'=>'client'],function (){
 
     //View Auctions
     Route::get('auction','Client\DashboardController@auctions');
+    Route::get('auctions','Client\DashboardController@tabbedAuctions');
 
     //View Cars
     Route::get('cars','Client\DashboardController@cars');

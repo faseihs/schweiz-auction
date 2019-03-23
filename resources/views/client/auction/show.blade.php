@@ -282,6 +282,30 @@
     </div>--}}
 
         <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div id="slider" class="flexslider">
+                    <ul class="slides">
+                        @foreach($auction->files as $file)
+                            <li>
+                                <img style="max-height: 400px" class="img-responsive" src="{{$file->getImage()}}" />
+                            </li>
+                    @endforeach
+                    <!-- items mirrored twice, total of 12 -->
+                    </ul>
+                </div>
+                <div id="carousel" class="flexslider">
+                    <ul class="slides">
+                        @foreach($auction->files as $file)
+                            <li>
+                                <img src="{{$file->getImage()}}" />
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+
+
+            </div>
             <div class="col-md-4 col-sm-12">
                 <div class="card">
                     <div class="card-header">Auction Details <a class="btn btn-info btn-labled fa fa-info" href="/admin/auction-bids/{{$auction->id}}"> See Bids</a></div>
@@ -318,11 +342,11 @@
                                         <td>Bids</td>
                                         <td>{{sizeof($auction->bids)}}</td>
                                     </tr>
-                                    <tr>
+                                    <tr style="background: black; color: white;">
                                         <td>Starts in</td>
                                         <td class="countdown-container" id="start"></td>
                                     </tr>
-                                    <tr>
+                                    <tr >
                                         <td>Ends in</td>
                                         <td id="end"></td>
                                     </tr>
@@ -347,130 +371,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-12">
-                <div id="slider" class="flexslider">
-                    <ul class="slides">
-                        @foreach($auction->files as $file)
-                            <li>
-                                <img style="max-height: 400px" class="img-responsive" src="{{$file->getImage()}}" />
-                            </li>
-                    @endforeach
-                    <!-- items mirrored twice, total of 12 -->
-                    </ul>
-                </div>
-                <div id="carousel" class="flexslider">
-                    <ul class="slides">
-                        @foreach($auction->files as $file)
-                            <li>
-                                <img src="{{$file->getImage()}}" />
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
 
-
-
-            </div>
 
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-header">Vehicle Details</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div style="font-size: 13px;" class="col-md-12 table-responsive">
-                                <table class="table table-striped">
-                                    <thead>
-                                    <th></th>
-                                    <th></th>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>Mileage</td>
-                                        <td>{{$auction->Vehicle->mileage}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1st Reg</td>
-                                        <td>{{$auction->Vehicle->registration}}</td>
-                                    </tr>
-                                    {{--<tr>
-                                        <td>Wheeldrive</td>
-                                        <td>{{$auction->Vehicle->wheeldrive}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gear</td>
-                                        <td>{{$auction->Vehicle->gear}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Fuel</td>
-                                        <td>{{$auction->Vehicle->fuel}}</td>
-                                    </tr>--}}
-                                    <tr>
-                                        <td>Displacement</td>
-                                        <td>{{$auction->Vehicle->displacement}}</td>
-                                    </tr>
-                                    {{--<tr>
-                                        <td>Body</td>
-                                        <td>{{$auction->Vehicle->body}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Interior</td>
-                                        <td>{{$auction->Vehicle->interior}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Exterior Color</td>
-                                        <td>{{$auction->Vehicle->exterior_color}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Seats</td>
-                                        <td>{{$auction->Vehicle->seats}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Transported By</td>
-                                        <td>{{$auction->Vehicle->transported_by}}</td>
-                                    </tr>--}}
-                                    </tbody>
-                                </table>
-                            </div>
 
-                        </div>
-                        <hr>
-
-                        @if(sizeof($defects)>0)
-
-                            <div class="row">
-
-                                <h5 class="col-md-12 font-weight-bold">Defects</h5>
-                            </div>
-                            <hr>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <ul class="list-group">
-                                        @foreach(explode(',',$auction->Vehicle->defects) as $c)
-                                            <li style="font-size: 13px;" class="list-group-item"> {{ucfirst($c)}}</li>
-
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            </div>
-                        @endif
-                        @if($auction->Vehicle->notes)
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-md-3 font-weight-bold">Notes :</div>
-                                <div class="col-md-9">{{$auction->Vehicle->notes?$auction->Vehicle->notes:'-'}}</div>
-                            </div>
-                        @endif
-
-
-
-                    </div>
-                </div>
-
-            </div>
-            <div style="font-size: 13px;" class="col-md-8">
+            <div style="font-size: 13px;" class="col-md-6">
                 <div class="card">
                     <div class="card-header">Further Descriptions</div>
                     <div class="card-body">
@@ -575,6 +481,102 @@
 
                     </div>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Vehicle Details</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div style="font-size: 13px;" class="col-md-12 table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <th></th>
+                                    <th></th>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Mileage</td>
+                                        <td>{{$auction->Vehicle->mileage}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1st Reg</td>
+                                        <td>{{$auction->Vehicle->registration}}</td>
+                                    </tr>
+                                    {{--<tr>
+                                        <td>Wheeldrive</td>
+                                        <td>{{$auction->Vehicle->wheeldrive}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gear</td>
+                                        <td>{{$auction->Vehicle->gear}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fuel</td>
+                                        <td>{{$auction->Vehicle->fuel}}</td>
+                                    </tr>--}}
+                                    <tr>
+                                        <td>Displacement</td>
+                                        <td>{{$auction->Vehicle->displacement}}</td>
+                                    </tr>
+                                    {{--<tr>
+                                        <td>Body</td>
+                                        <td>{{$auction->Vehicle->body}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interior</td>
+                                        <td>{{$auction->Vehicle->interior}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exterior Color</td>
+                                        <td>{{$auction->Vehicle->exterior_color}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Seats</td>
+                                        <td>{{$auction->Vehicle->seats}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transported By</td>
+                                        <td>{{$auction->Vehicle->transported_by}}</td>
+                                    </tr>--}}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <hr>
+
+                        @if(sizeof($defects)>0)
+
+                            <div class="row">
+
+                                <h5 class="col-md-12 font-weight-bold">Defects</h5>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="list-group">
+                                        @foreach(explode(',',$auction->Vehicle->defects) as $c)
+                                            <li style="font-size: 13px;" class="list-group-item"> {{ucfirst($c)}}</li>
+
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            </div>
+                        @endif
+                        @if($auction->Vehicle->notes)
+                            <hr>
+
+                            <div class="row">
+                                <div class="col-md-3 font-weight-bold">Notes :</div>
+                                <div class="col-md-9">{{$auction->Vehicle->notes?$auction->Vehicle->notes:'-'}}</div>
+                            </div>
+                        @endif
+
+
+
+                    </div>
+                </div>
+
             </div>
             <div style="font-size: 13px;" class="col-md-12">
                 <div class="card">
