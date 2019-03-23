@@ -342,7 +342,7 @@
                                         <td>Bids</td>
                                         <td>{{sizeof($auction->bids)}}</td>
                                     </tr>
-                                    <tr style="background: black; color: white;">
+                                    <tr >
                                         <td>Starts in</td>
                                         <td class="countdown-container" id="start"></td>
                                     </tr>
