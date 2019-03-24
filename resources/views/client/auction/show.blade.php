@@ -46,7 +46,7 @@
 
                         <div class="row">
                             <div style="font-size: 13px;" class="col-md-12 table-responsive">
-                                <table class="table table-striped">
+                                <table class="table table-striped table-sm">
                                     <thead>
                                     <th></th>
                                     <th></th>
@@ -144,7 +144,7 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table class="table table-striped">
+                                            <table class="table table-striped table-sm">
                                                 <thead>
                                                 <tr>
                                                     <th></th>
@@ -194,7 +194,7 @@
 
         </div>
         <div style="margin-top: 24px;" class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">Description Of Damage</div>
@@ -257,7 +257,7 @@
                     </div>
                 </div>
             </div>
-            <div style="font-size: 13px" class="col-md-8">
+            <div style="font-size: 13px" class="col-md-6">
                 <div class="card">
 
                     <div class="card-body">
