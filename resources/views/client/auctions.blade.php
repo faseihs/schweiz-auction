@@ -16,7 +16,7 @@
                 <a href="/client/auctions?type=bus" class="nav-link {{$type=='bus'?'active':''}}" id="contact-tab">Bus</a>
             </li>
             <li class="nav-item">
-                <a href="/client/auctions?type=others" class="nav-link {{$type=='Others'?'active':''}}" id="contact-tab">Others</a>
+                <a href="/client/auctions?type=others" class="nav-link {{$type=='others'?'active':''}}" id="contact-tab">Others</a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">

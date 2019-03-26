@@ -42,7 +42,7 @@
             <div class="col-md-4 col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="card-title">Auction Details <br><a class="btn btn-info btn-labled fa fa-info" href="/admin/auction-bids/{{$auction->id}}"> See Bids</a></div>
+                        <div class="card-title">Auction Details </div>
 
                         <div class="row">
                             <div style="font-size: 13px;" class="col-md-12 table-responsive">
@@ -276,7 +276,7 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($auction->bids()->orderBy('amount','DESC')->get() as $key=> $bid)
+                                    @foreach($auction->bids()->where('user_id',Auth::user()->id)->orderBy('amount','DESC')->get() as $key=> $bid)
                                         <tr>
                                             <td class="serial">{{$key+1}}</td>
                                             <td>{{$bid->user->name}}</td>

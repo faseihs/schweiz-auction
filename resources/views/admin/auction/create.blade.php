@@ -193,12 +193,14 @@
 
                         <div class="row form-group">
                             <div class="col-md-2">Images</div>
+{{--
                             <div class="col-md-2"><button type="button" class="btn btn-success btn-sm addImages"><i class="fa fa-plus"></i> Add Image</button></div>
+--}}
                             <hr>
                             <div class="col-md-12 images">
                                 <div class="row images-item">
                                     <div class="col-md-4">
-                                        <input class="form-control" required  name="images[]" type="file" accept="image/*">
+                                        <input class="form-control" multiple required  name="images[]" type="file" accept="image/*">
                                     </div>
 
                                 </div>
